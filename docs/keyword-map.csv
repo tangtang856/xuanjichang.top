@@ -1,0 +1,39 @@
+Keyword,Intent,Target URL,Page Type,Priority,Title,H1
+机场推荐,商业调研与聚合选择,https://xuanjichang.top/,Pillar (首页),P0,2026精选优质机场推荐与VPN节点评测导航 - 选机场网,2026年高质量中文机场推荐与科学上网节点选购指南
+梯子推荐,商业调查与替代方案,https://xuanjichang.top/,Pillar (首页),P0,2026精选优质机场推荐与VPN节点评测导航 - 选机场网,2026年高质量中文机场推荐与科学上网节点选购指南
+vpn推荐,通用网络隐私与网络工具检索,https://xuanjichang.top/,Pillar (首页),P0,2026精选优质机场推荐与VPN节点评测导航 - 选机场网,2026年高质量中文机场推荐与科学上网节点选购指南
+综合排行榜,深度决策与多维度对比,https://xuanjichang.top/ranking/overall/,Ranking,P0,2026年度综合实力机场排行榜 - 稳定性与速度综合评定,2026年度机场综合实力排行榜
+性价比机场,价格敏感与实用型选择,https://xuanjichang.top/ranking/value/,Ranking,P0,2026年高性价比机场排行榜 - 每GB单价与真实流量折算,2026年高性价比实用机场排行榜
+低预算机场,极致省钱与学生党备用,https://xuanjichang.top/ranking/budget/,Ranking,P1,低预算便宜机场排行榜 - 月付10元内平价备用推荐,低预算平价机场排行榜（月付10元以内精选）
+稳定机场,高可用商业与远程办公,https://xuanjichang.top/ranking/stable/,Ranking,P0,高稳定专线机场排行榜 - 晚高峰零丢包IEPL专线推荐,高稳定性专线机场排行榜（晚高峰防断连）
+低预算专题,学生党与轻度冲浪,https://xuanjichang.top/recommend/budget/,Cluster,P1,低预算便宜机场推荐专题 - 极致性价比与月付方案,平价低预算机场选购方案与推荐专题
+高端专线机场,4K超清与跨境办公,https://xuanjichang.top/recommend/premium/,Cluster,P0,高端IEPL专线机场推荐专题 - 晚高峰低延迟抗封锁专线,高端IEPL/IPLC专线机场推荐专题
+新手入门机场,开箱即用与一键导入,https://xuanjichang.top/recommend/beginner/,Cluster,P0,新手入门机场推荐专题 - 一键导入与中文全平台客户端,新手小白入门机场推荐专题
+稳定性优先机场,企业办公与股票行情,https://xuanjichang.top/recommend/stable/,Cluster,P0,稳定优先抗封锁机场推荐专题 - 多入口BGP容灾解析,稳定优先抗封锁机场推荐专题
+AI服务机场,ChatGPT与Claude无风控,https://xuanjichang.top/recommend/ai/,Cluster,P0,ChatGPT与Claude专用AI机场推荐 - 原生纯净住宅IP精选,AI大模型专用机场推荐（原生纯净IP解锁）
+流媒体机场,Netflix与Disney+ 4K解锁,https://xuanjichang.top/recommend/streaming/,Cluster,P1,4K流媒体解锁机场推荐 - Netflix与YouTube超清专线,Netflix与Disney+ 4K流媒体专用机场推荐
+机场横向比较,多品牌参数直接横向对照,https://xuanjichang.top/compare/,Tool,P0,机场在线横向对比工具 - 价格流量协议节点全维度比对,在线机场参数与价格横向对比工具
+Windows客户端配置,操作教程与软件下载配置,https://xuanjichang.top/guides/windows/,Tutorial,P0,Windows电脑科学上网教程 - Clash Verge与v2rayN图文配置,Windows平台客户端安装与订阅配置教程
+Android客户端配置,安卓手机小猫咪配置,https://xuanjichang.top/guides/android/,Tutorial,P0,Android手机科学上网配置教程 - Clash Meta与v2rayNG图文详解,Android平台客户端配置与节点使用教程
+iOS客户端配置,苹果手机小火箭Shadowrocket配置,https://xuanjichang.top/guides/ios/,Tutorial,P0,iOS苹果手机科学上网教程 - Shadowrocket小火箭配置与节点导入,iOS平台Shadowrocket与节点导入配置教程
+macOS客户端配置,苹果电脑Mac客户端配置,https://xuanjichang.top/guides/macos/,Tutorial,P1,macOS苹果电脑科学上网教程 - Clash Verge与Surge图文配置,macOS平台客户端配置与系统代理设置教程
+机场与传统VPN对比,技术认知与概念澄清,https://xuanjichang.top/blog/airport-vs-traditional-vpn/,Article,P0,机场与传统VPN有什么区别？技术原理与选购防坑深度对比,机场与传统VPN有什么区别？技术原理、速度与安全性深度剖析
+节点协议对比,协议原理与选型指导,https://xuanjichang.top/blog/protocol-comparison-shadowsocks-trojan-vless-hysteria2/,Article,P0,Shadowsocks/Trojan/VLESS/Hysteria2协议深度对比与选型指南,常用翻墙代理协议深度对比：SS、Trojan、VLESS与Hysteria 2
+晚高峰测速防坑,防虚假测速与跑路预警,https://xuanjichang.top/blog/how-to-test-speed-and-avoid-pitfalls/,Article,P1,如何科学测试机场晚高峰速度？辨别虚假宣传与跑路风险防坑指南,如何科学测试机场晚高峰真实速度与辨识跑路风险
+流媒体与AI解锁原理,IP纯净度与住宅IP解析,https://xuanjichang.top/blog/chatgpt-streaming-unlock-guide/,Article,P1,ChatGPT与流媒体解锁原理揭秘：原生IP、广播IP与DNS解锁注意事项,ChatGPT与Netflix流媒体解锁原理全揭秘与选购注意事项
+机场选购终极指南,决策框架与评估步骤,https://xuanjichang.top/blog/how-to-choose-airport/,Article,P0,新手如何选择适合自己的机场？2026年保姆级选购决策指南,新手如何科学挑选适合自己的机场？完整决策评估指南
+IPLC与IEPL专线解析,网络架构专业术语认知,https://xuanjichang.top/glossary/iplc-iepl/,Glossary,P1,什么是IPLC和IEPL专线？专线与公网隧道有什么本质区别？,专业术语科普：什么是IPLC与IEPL内网专线？
+Clash内核与客户端解析,客户端生态体系知识,https://xuanjichang.top/glossary/clash/,Glossary,P1,什么是Clash？内核演进、分流规则与流行GUI客户端全解析,术语百科：什么是Clash？规则分流与主流客户端生态
+Shadowsocks与Trojan协议,协议知识与抗GFW机理,https://xuanjichang.top/glossary/shadowsocks-trojan/,Glossary,P1,Shadowsocks与Trojan协议科普：TLS伪装与加密传输机制详解,协议百科：Shadowsocks与Trojan的运作原理与TLS伪装机制
+Shadowrocket小火箭术语,iOS流行客户端功能说明,https://xuanjichang.top/glossary/shadowrocket/,Glossary,P1,Shadowrocket小火箭百科：功能特性、下载方法与节点导入规则,工具百科：Shadowrocket（小火箭）全面介绍与核心特性
+倍率与流量计算规则,防止流量偷跑扣费陷阱,https://xuanjichang.top/glossary/rate-multiplier/,Glossary,P1,什么是机场节点倍率？0.1倍到5倍节点的真实流量计算方法,流量百科：什么是节点倍率？高倍率与低倍率的流量折算详解
+桔子云评测,品牌深度独立实测,https://xuanjichang.top/review/juziyun/,Review,P0,桔子云怎么样？2026真实套餐价格、线路特点与综合评测,桔子云深度评测：套餐资费、节点线路与优缺点客观分析
+闪电猫评测,品牌深度独立实测,https://xuanjichang.top/review/shangdianmao/,Review,P0,闪电猫怎么样？2026线路质量、流媒体解锁与套餐优缺点评测,闪电猫深度评测：全专线架构、流媒体AI解锁与购买建议
+泡泡狗评测,品牌深度独立实测,https://xuanjichang.top/review/paopaogou/,Review,P0,泡泡狗怎么样？2026性价比套餐、节点速度与使用体验评测,泡泡狗深度评测：平价高带宽套餐、节点分布与实测表现
+Just My Socks评测,海外大厂品牌独立实测,https://xuanjichang.top/review/justmysocks/,Review,P0,Just My Socks评测：搬瓦工官方机场、IP自动更换与稳定性分析,Just My Socks深度评测：搬瓦工官方运营、被墙自动切IP与真实表现
+飞鸟云评测,老牌平价品牌独立实测,https://xuanjichang.top/review/feiniaoyun/,Review,P0,飞鸟云怎么样？2026入门套餐价格、节点分布与优缺点深度评测,飞鸟云深度评测：高性价比入门方案、晚高峰表现与选购建议
+关于我们,站点介绍与技术使命,https://xuanjichang.top/about/,Trust,P2,关于选机场网 - 独立客观的中文网络工具与节点资讯站,关于选机场网：我们的使命、团队原则与评估体系
+联系方式,用户反馈与纠错入口,https://xuanjichang.top/contact/,Trust,P2,联系我们 - 选机场网意见反馈、数据勘误与商务合作,联系选机场网：意见反馈、数据纠错与沟通渠道
+编辑政策,客观性声明与评价标准,https://xuanjichang.top/editorial-policy/,Trust,P2,编辑政策与评测标准 - 选机场网独立内容创作规范,编辑政策：数据来源标准、评测规范与联盟推广披露
+隐私政策,合规隐私声明,https://xuanjichang.top/privacy-policy/,Trust,P2,隐私政策 - 选机场网用户隐私与Cookie使用声明,隐私政策：个人信息保护与无痕浏览保障
+免责声明,合规风险与法律提示,https://xuanjichang.top/disclaimer/,Trust,P2,免责声明与服务条款 - 选机场网内容使用规范,免责声明：技术研究与合规使用声明

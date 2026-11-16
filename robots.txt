@@ -1,0 +1,20 @@
+# robots.txt for https://xuanjichang.top/
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /data/
+Disallow: /scripts/
+Disallow: /docs/
+
+# Search Engine Specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemaps
+Sitemap: https://xuanjichang.top/sitemap.xml
+Sitemap: https://xuanjichang.top/sitemap-index.xml

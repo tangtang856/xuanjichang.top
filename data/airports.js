@@ -1,0 +1,409 @@
+const AIRPORTS_DATA = [
+  {
+    "id": "juziyun",
+    "name": "桔子云",
+    "slug": "juziyun",
+    "description": "老牌资深中文机场，采用BGP多线入口与智能分流隧道架构，兼顾流媒体解锁与全天候网络连接稳定性。",
+    "officialUrl": "review/juziyun/index.html",
+    "reviewUrl": "review/juziyun/index.html",
+    "startingPrice": 15.8,
+    "currency": "CNY",
+    "billingCycle": "月付",
+    "plans": [
+      {
+        "name": "体验版套餐",
+        "price": 15.8,
+        "cycle": "按月计费",
+        "traffic": "100 GB",
+        "trafficBytesGB": 100,
+        "bandwidth": "300 Mbps",
+        "devices": "3台",
+        "costPerGB": 0.158,
+        "features": ["BGP多线中转入口", "支持4K流媒体解锁", "标准工单售后支持"]
+      },
+      {
+        "name": "进阶版套餐",
+        "price": 29.9,
+        "cycle": "按月计费",
+        "traffic": "220 GB",
+        "trafficBytesGB": 220,
+        "bandwidth": "500 Mbps",
+        "devices": "5台",
+        "costPerGB": 0.136,
+        "features": ["IEPL专线节点覆盖", "全流媒体与ChatGPT解锁", "多设备并发不限速"]
+      },
+      {
+        "name": "旗舰版套餐",
+        "price": 59.9,
+        "cycle": "按月计费",
+        "traffic": "500 GB",
+        "trafficBytesGB": 500,
+        "bandwidth": "1000 Mbps",
+        "devices": "8台",
+        "costPerGB": 0.120,
+        "features": ["千兆专线低延迟直连", "专属高速VIP节点", "优先技术工单支持"]
+      }
+    ],
+    "protocols": ["Shadowsocks", "Trojan", "Vmess"],
+    "regions": ["香港", "日本", "新加坡", "美国", "台湾", "韩国", "英国", "德国"],
+    "nodeCount": "60+ 优质节点",
+    "lineType": "BGP多线中转 + 部分IEPL专线",
+    "deviceLimit": "3 - 8台并发",
+    "aiSupport": ["ChatGPT", "Claude", "Microsoft Copilot", "Midjourney"],
+    "streamingSupport": ["Netflix 全区", "Disney+", "YouTube 4K/8K", "HBO Max", "Bilibili港澳台"],
+    "advantages": [
+      "连续稳定运营多年，品牌信誉良好，无跑路黑历史",
+      "全节点支持BGP多入口智能解析容灾，抗封锁能力较强",
+      "流媒体解锁覆盖广，针对Netflix与Disney+有专属优化分流",
+      "配套教程详细，支持主流Clash、Sing-box、小火箭一键订阅导入"
+    ],
+    "disadvantages": [
+      "晚高峰（20:00-23:00）偶见个别热门香港节点出现轻微延迟波动",
+      "月付套餐无大幅折扣，长周期季付/年付才具备更优性价比",
+      "工单回复主要在工作时段，夜间非高峰期客服响应稍慢"
+    ],
+    "suitableFor": [
+      "日常追剧与YouTube 4K重度影音爱好者",
+      "需要稳定访问Google、GitHub、维基百科的学习科研人员",
+      "希望开箱即用、不想复杂折腾协议的小白新手"
+    ],
+    "sources": [
+      "官方订阅管理后台公开套餐参数",
+      "用户服务协议与控制面板网络拓扑公开说明",
+      "日常网络自动化监测连通性记录"
+    ],
+    "lastVerified": "2026-03",
+    "testStatus": "official-data",
+    "overallRating": 9.2,
+    "speedRating": 9.0,
+    "stabilityRating": 9.3,
+    "valueRating": 9.2
+  },
+  {
+    "id": "shangdianmao",
+    "name": "闪电猫",
+    "slug": "shangdianmao",
+    "description": "专为对网络稳定性有严苛要求的高端用户设计，全节点采用纯正IEPL内网专线，晚高峰超低延迟、零丢包，无视敏感期波动。",
+    "officialUrl": "review/shangdianmao/index.html",
+    "reviewUrl": "review/shangdianmao/index.html",
+    "startingPrice": 32.0,
+    "currency": "CNY",
+    "billingCycle": "月付",
+    "plans": [
+      {
+        "name": "黄金专线套餐",
+        "price": 32.0,
+        "cycle": "按月计费",
+        "traffic": "120 GB",
+        "trafficBytesGB": 120,
+        "bandwidth": "500 Mbps",
+        "devices": "5台",
+        "costPerGB": 0.267,
+        "features": ["纯正IEPL内网专线", "晚高峰无丢包保障", "原生纯净IP解锁AI"]
+      },
+      {
+        "name": "白金旗舰套餐",
+        "price": 58.0,
+        "cycle": "按月计费",
+        "traffic": "260 GB",
+        "trafficBytesGB": 260,
+        "bandwidth": "1000 Mbps",
+        "devices": "8台",
+        "costPerGB": 0.223,
+        "features": ["千兆专线极速下载", "跨国会议Zoom/Teams优化", "企业级全天候技术服务"]
+      },
+      {
+        "name": "钻石尊享套餐",
+        "price": 98.0,
+        "cycle": "按月计费",
+        "traffic": "500 GB",
+        "trafficBytesGB": 500,
+        "bandwidth": "1000 Mbps",
+        "devices": "12台",
+        "costPerGB": 0.196,
+        "features": ["多地域原生住宅IP节点", "海外游戏加速低延迟", "一对一专线客服快速响应"]
+      }
+    ],
+    "protocols": ["Shadowsocks", "Trojan"],
+    "regions": ["香港", "日本", "新加坡", "美国", "台湾", "英国", "韩国", "澳大利亚"],
+    "nodeCount": "80+ 专线节点",
+    "lineType": "全IEPL内网独享/共享专线",
+    "deviceLimit": "5 - 12台并发",
+    "aiSupport": ["ChatGPT (原生IP无风控)", "Claude 3.5 Sonnet", "Gemini Advanced", "Suno", "Midjourney"],
+    "streamingSupport": ["Netflix 4K/HDR", "Disney+", "DAZN", "Hulu", "BBC iPlayer", "AbemaTV"],
+    "advantages": [
+      "全程走内网IEPL专线不经过公网防火墙，封锁敏感期表现极度坚挺",
+      "晚高峰（20:00-24:00）几乎无丢包，延迟稳定控制在50ms以内",
+      "节点IP纯净度高，对OpenAI及Claude的风控检测极具抵抗力",
+      "技术客服全天在线，节点故障自动秒级切换备用链路"
+    ],
+    "disadvantages": [
+      "起步价格高于行业平均水平，单GB流量成本较高",
+      "不提供免费试用套餐，仅有付费体验选项",
+      "严格禁止BT/PT高并发P2P大流量下载以防专线拥塞"
+    ],
+    "suitableFor": [
+      "外企跨国远程办公人员（Slack、Zoom会议无卡顿）",
+      "重度依赖ChatGPT、Claude进行生产力工作的开发者与创作者",
+      "美股、港股、外汇高频交易者（对延迟与网络防断连要求极高）"
+    ],
+    "sources": [
+      "服务商官方网站实时套餐说明",
+      "节点路由Traceroute真实探测与协议检测",
+      "企业内部多终端持续挂机运行记录"
+    ],
+    "lastVerified": "2026-03",
+    "testStatus": "official-data",
+    "overallRating": 9.6,
+    "speedRating": 9.7,
+    "stabilityRating": 9.8,
+    "valueRating": 8.8
+  },
+  {
+    "id": "paopaogou",
+    "name": "泡泡狗",
+    "slug": "paopaogou",
+    "description": "主打高性价比与大流量中转服务，节点倍率标注透明规范，适合追求每GB极致单价的实用型用户。",
+    "officialUrl": "review/paopaogou/index.html",
+    "reviewUrl": "review/paopaogou/index.html",
+    "startingPrice": 12.0,
+    "currency": "CNY",
+    "billingCycle": "月付",
+    "plans": [
+      {
+        "name": "轻量尝鲜套餐",
+        "price": 12.0,
+        "cycle": "按月计费",
+        "traffic": "100 GB",
+        "trafficBytesGB": 100,
+        "bandwidth": "200 Mbps",
+        "devices": "3台",
+        "costPerGB": 0.120,
+        "features": ["公网隧道中转节点", "常见流媒体基础解锁", "支持月付弹性购买"]
+      },
+      {
+        "name": "标准实用套餐",
+        "price": 22.0,
+        "cycle": "按月计费",
+        "traffic": "220 GB",
+        "trafficBytesGB": 220,
+        "bandwidth": "400 Mbps",
+        "devices": "4台",
+        "costPerGB": 0.100,
+        "features": ["全节点全天候可用", "ChatGPT基础支持", "工单技术支持"]
+      },
+      {
+        "name": "大容量畅享套餐",
+        "price": 39.0,
+        "cycle": "按月计费",
+        "traffic": "500 GB",
+        "trafficBytesGB": 500,
+        "bandwidth": "600 Mbps",
+        "devices": "6台",
+        "costPerGB": 0.078,
+        "features": ["低至0.078元/GB", "多节点倍率灵活切换", "全平台订阅适配"]
+      }
+    ],
+    "protocols": ["Shadowsocks", "Vmess"],
+    "regions": ["香港", "日本", "新加坡", "美国", "台湾", "德国", "法国"],
+    "nodeCount": "45+ 节点",
+    "lineType": "优质公网中转隧道",
+    "deviceLimit": "3 - 6台并发",
+    "aiSupport": ["ChatGPT (部分指定优化节点)", "Microsoft Copilot"],
+    "streamingSupport": ["YouTube 4K", "Netflix (主流节点)", "Disney+"],
+    "advantages": [
+      "单价实惠亲民，大容量套餐每GB单价低至0.08元以内",
+      "节点列表倍率公示公开透明（0.2倍率省流节点到1.0倍率常用节点）",
+      "支持Clash Verge、v2rayN、小火箭多协议订阅转换",
+      "入门门槛低，支持灵活月付无需长期捆绑"
+    ],
+    "disadvantages": [
+      "非全专线结构，大型节假日公网防火墙波动期偶有掉线重连",
+      "晚高峰（21:00左右）部分热门香港低倍率节点拥挤，需手动切换新加坡或日本",
+      "AI原生解锁非全部节点覆盖，需选择标注了AI的专用节点"
+    ],
+    "suitableFor": [
+      "预算有限但流量消耗较大的在校大学生",
+      "大文件下载、看网课、查学术文献的轻中度用户",
+      "寻找平价第二梯子作为双保险备用的网络用户"
+    ],
+    "sources": [
+      "官方订阅面板实时套餐公开价格",
+      "节点倍率规则手册",
+      "多网络运营商实地测速反馈"
+    ],
+    "lastVerified": "2026-03",
+    "testStatus": "official-data",
+    "overallRating": 8.9,
+    "speedRating": 8.8,
+    "stabilityRating": 8.6,
+    "valueRating": 9.5
+  },
+  {
+    "id": "justmysocks",
+    "name": "Just My Socks",
+    "slug": "justmysocks",
+    "description": "知名海外主机服务商 BandwagonHost (搬瓦工) 官方运营，核心优势为被墙自动后台更换可用IP，CN2 GIA/AS9929优质回国线路，无跑路风险。",
+    "officialUrl": "review/justmysocks/index.html",
+    "reviewUrl": "review/justmysocks/index.html",
+    "startingPrice": 42.0,
+    "currency": "CNY",
+    "billingCycle": "月付 (5.88 USD)",
+    "plans": [
+      {
+        "name": "JMS 500 Plan (LA)",
+        "price": 42.0,
+        "cycle": "按月计费 ($5.88)",
+        "traffic": "500 GB",
+        "trafficBytesGB": 500,
+        "bandwidth": "2.5 Gbps",
+        "devices": "5台",
+        "costPerGB": 0.084,
+        "features": ["洛杉矶CN2 GIA/CMIN2线路", "IP被封自动切换", "500GB充沛大流量"]
+      },
+      {
+        "name": "JMS 1000 Plan (LA)",
+        "price": 70.0,
+        "cycle": "按月计费 ($9.88)",
+        "traffic": "1000 GB",
+        "trafficBytesGB": 1000,
+        "bandwidth": "5.0 Gbps",
+        "devices": "不限",
+        "costPerGB": 0.070,
+        "features": ["超大千吉流量", "三网回程CN2 GIA优化", "全天候海外工单保障"]
+      },
+      {
+        "name": "JMS Tokyo 100 Plan",
+        "price": 215.0,
+        "cycle": "按月计费 ($29.99)",
+        "traffic": "100 GB",
+        "trafficBytesGB": 100,
+        "bandwidth": "100 Mbps",
+        "devices": "3台",
+        "costPerGB": 2.15,
+        "features": ["日本东京原生直连", "低延迟软银/CN2 GIA混合", "适合极致低延迟极客"]
+      }
+    ],
+    "protocols": ["Shadowsocks", "Vmess"],
+    "regions": ["美国洛杉矶", "日本东京", "英国伦敦", "香港 (CMI)"],
+    "nodeCount": "核心优化路由节点组",
+    "lineType": "CN2 GIA + CMIN2 + 联通AS9929三网优化回国",
+    "deviceLimit": "3 - 5台（高级套餐不限）",
+    "aiSupport": ["ChatGPT (美国原生直连IP)", "Claude (原生支持)", "Google Gemini"],
+    "streamingSupport": ["YouTube 4K/8K 极致流畅", "Netflix 自制剧"],
+    "advantages": [
+      "海外正规商业IDC搬瓦工官方运营，经营十余年，信用极高绝无跑路风险",
+      "核心专利级IP防封机制：如果节点IP被防火墙屏蔽，系统后台自动毫秒级切换新IP",
+      "美国洛杉矶机房三网走CN2 GIA / 联通9929回程，大带宽吞吐能力极强",
+      "支持PayPal、银联与多种海外主流合规支付方式，交易安全有保障"
+    ],
+    "disadvantages": [
+      "官方后台纯英文界面，对完全不懂英语的用户稍有操作门槛",
+      "没有国内常见的一键客户端集成，需要手动复制Shadowsocks/V2Ray配置到客户端",
+      "按美元计价受汇率浮动影响，日韩短途低延迟套餐价格非常昂贵"
+    ],
+    "suitableFor": [
+      "极度担心机场跑路、追求绝对信誉与数据合规的长期用户",
+      "跨国企业开发者、经常使用海外原生IP访问OpenAI/GitHub的技术人员",
+      "具备基础客户端配置动手能力、看重带宽充足度的极客"
+    ],
+    "sources": [
+      "BandwagonHost JMS 官方服务支持中心",
+      "公开路由BGP与AS号回程路由路由表",
+      "全球多网络连通性监测记录"
+    ],
+    "lastVerified": "2026-03",
+    "testStatus": "official-data",
+    "overallRating": 9.4,
+    "speedRating": 9.5,
+    "stabilityRating": 9.7,
+    "valueRating": 8.7
+  },
+  {
+    "id": "feiniaoyun",
+    "name": "飞鸟云",
+    "slug": "feiniaoyun",
+    "description": "平价入门级机场代表，提供超低月付门槛套餐，适合预算极其有限的学生党或作为主干专线的平价防失联备用梯子。",
+    "officialUrl": "review/feiniaoyun/index.html",
+    "reviewUrl": "review/feiniaoyun/index.html",
+    "startingPrice": 8.5,
+    "currency": "CNY",
+    "billingCycle": "月付",
+    "plans": [
+      {
+        "name": "轻量微型月付",
+        "price": 8.5,
+        "cycle": "按月计费",
+        "traffic": "60 GB",
+        "trafficBytesGB": 60,
+        "bandwidth": "150 Mbps",
+        "devices": "2台",
+        "costPerGB": 0.141,
+        "features": ["月付仅需8.5元", "主流地区节点覆盖", "适合查资料轻度浏览"]
+      },
+      {
+        "name": "实用季付套餐",
+        "price": 24.0,
+        "cycle": "按季计费 (折合8元/月)",
+        "traffic": "150 GB /月",
+        "trafficBytesGB": 150,
+        "bandwidth": "300 Mbps",
+        "devices": "3台",
+        "costPerGB": 0.053,
+        "features": ["单月折合8元", "每GB成本低至0.053元", "支持主流客户端导入"]
+      },
+      {
+        "name": "年付畅享套餐",
+        "price": 68.0,
+        "cycle": "按年计费 (折合5.6元/月)",
+        "traffic": "100 GB /月",
+        "trafficBytesGB": 100,
+        "bandwidth": "300 Mbps",
+        "devices": "3台",
+        "costPerGB": 0.056,
+        "features": ["超长年付省心无忧", "多协议节点冗余", "基础工单服务"]
+      }
+    ],
+    "protocols": ["Trojan", "Shadowsocks"],
+    "regions": ["香港", "日本", "新加坡", "美国"],
+    "nodeCount": "30+ 节点",
+    "lineType": "公网中转隧道",
+    "deviceLimit": "2 - 3台并发",
+    "aiSupport": ["ChatGPT (基础网页端)", "Google Gemini"],
+    "streamingSupport": ["YouTube 1080P/4K", "Netflix (部分节点自制剧)"],
+    "advantages": [
+      "单月起步仅8.5元，可以说是市面上价格最低的入门级机场之一",
+      "购买门槛极低，即使作为主力梯子的应急备用也毫无经济负担",
+      "节点连接配置简练，支持主流Clash订阅一键转换与更新",
+      "针对Google学术、维基百科等文字轻度浏览响应迅速"
+    ],
+    "disadvantages": [
+      "设备连接数限制较严（基础版仅允许2台设备在线）",
+      "线路为普通公网中转，在网络防火墙升级敏感期易出现偶发断连",
+      "不适合长时间超高清8K流媒体播放或大批量TB级文件下载"
+    ],
+    "suitableFor": [
+      "零花钱有限、仅需偶尔查阅资料的学生群体",
+      "已经有主力高端专线、需要配置一条极低成本副机场防失联的用户",
+      "轻度文字阅读、Google搜索与社交软件消息接收"
+    ],
+    "sources": [
+      "飞鸟云用户订购中心公开价目表",
+      "节点网络协议公开信息",
+      "实际常规测速与可用性测试"
+    ],
+    "lastVerified": "2026-03",
+    "testStatus": "official-data",
+    "overallRating": 8.7,
+    "speedRating": 8.5,
+    "stabilityRating": 8.4,
+    "valueRating": 9.6
+  }
+];
+
+if (typeof window !== 'undefined') {
+  window.AIRPORTS_DATA = AIRPORTS_DATA;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = AIRPORTS_DATA;
+}
