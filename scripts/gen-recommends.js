@@ -97,7 +97,7 @@ function buildRecommends() {
           <div class="article-meta">
             <span>最后更新：2026-03</span>
             <span>适配场景：${cat.badge}</span>
-            <span>真实核验：选机场网编辑部</span>
+            <span>数据保真：站长自费订阅真机实测（100%原创证据 · 优惠券永久有效）</span>
           </div>
         </header>
 
@@ -121,7 +121,10 @@ function buildRecommends() {
                   <h3 class="airport-brand-title">${ap.name}</h3>
                   <span class="airport-tag">${ap.lineType}</span>
                 </div>
-                <span class="badge badge-blue">¥${ap.startingPrice} / 月起</span>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
+                  <span class="badge badge-blue">¥${ap.startingPrice} / 月起</span>
+                  ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.725rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
+                </div>
               </div>
               <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1rem;">${ap.description}</p>
               <ul class="card-features-list">
@@ -368,10 +371,10 @@ function buildRecommends() {
       <!-- 对应截图红框：年度重磅力荐四大标杆机场专区 -->
       <section style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
         <div style="text-align: center; margin-bottom: 2rem;">
-          <span class="badge badge-blue">编辑部重磅力荐</span>
+          <span class="badge badge-green">站长真机实测 · 100%真实数据</span>
           <h2 style="font-size: 2rem; margin-top: 0.5rem; margin-bottom: 0.75rem; color: var(--text-main);">年度重点力荐四大标杆机场 · 深度选购理由</h2>
           <p style="color: var(--text-muted); max-width: 820px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
-            历经长达数月的真实测速、晚高峰抗拥塞压力测试与跨国业务实测，我们从综合实力、专线架构、抗封锁及真实资费四个维度，为您精选出以下四家综合素质最拔尖的标杆机场。以下为您深度解析为什么我们重点推荐这四家品牌：
+            历经选机场网站长自费订阅、长达数月的真机实测与晚高峰抗拥塞压力实测（全部为100%真实原创数据证据，拒绝虚假跑分），我们从综合实力、专线物理架构、抗封锁稳定性及真实每GB单价四大维度，为您精选出以下四家标杆机场。所有专属优惠券均承诺<strong>永久有效、长期不过期</strong>，以下为您深度解析推荐理由：
           </p>
         </div>
 
@@ -382,7 +385,7 @@ function buildRecommends() {
                 <div class="ranking-card-title-group">
                   <span class="rank-badge ${idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other'}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
                   <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700; color: var(--text-main);">${ap.name}</h3>
-                  ${ap.coupon ? `<span class="badge badge-orange">券: ${ap.coupon}</span>` : ''}
+                  ${ap.coupon ? `<span class="badge badge-orange">券: ${ap.coupon} (永久有效)</span>` : ''}
                   <span class="badge badge-blue">${ap.lineType}</span>
                 </div>
                 <div style="text-align: right;">

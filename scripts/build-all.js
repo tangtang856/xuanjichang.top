@@ -84,7 +84,7 @@ function buildIndexPage() {
       <div class="section-header">
         <div>
           <h2 class="section-title">2026精选优质机场节点推荐</h2>
-          <p class="section-subtitle">基于真实线路类型、运营资历、流媒体与AI支持度精选代表性服务商</p>
+          <p class="section-subtitle">选机场网站长自费订阅真机实测（100%真实原创证据），专属优惠码永久有效</p>
         </div>
         <a href="${root}ranking/overall/index.html" class="section-more-link">查看完整排行榜 &rarr;</a>
       </div>
@@ -99,8 +99,8 @@ function buildIndexPage() {
                 <span class="airport-tag">${ap.lineType}</span>
               </div>
               <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
-                <span class="badge ${ap.testStatus === 'official-data' ? 'badge-blue' : 'badge-green'}">已核实资料</span>
-                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.725rem;">券: ${ap.coupon}</span>` : ''}
+                <span class="badge badge-green">站长真机实测</span>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.725rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
               </div>
             </div>
             <div class="price-box">

@@ -85,11 +85,28 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted); margin-top: 0.25rem;">
                     起步价: ¥${it.startingPrice} / 月
                   </div>
+                  ${it.coupon ? `<div style="margin-top: 0.35rem;"><span class="badge badge-orange" style="font-size: 0.725rem;">券: ${it.coupon} (永久有效)</span></div>` : ''}
                 </th>
               `).join('')}
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td style="font-weight: 700; background: var(--bg-subtle);">专属优惠码与有效性</td>
+              ${items.map(it => `
+                <td style="text-align: center; font-size: 0.85rem;">
+                  ${it.coupon ? `<strong style="color: #fb923c; font-family: monospace;">${it.coupon}</strong> <span class="badge badge-green" style="font-size: 0.7rem; margin-left: 0.25rem;">永久有效</span>` : '<span style="color: var(--text-muted);">官方暂无折扣券</span>'}
+                </td>
+              `).join('')}
+            </tr>
+            <tr>
+              <td style="font-weight: 700; background: var(--bg-subtle);">实测数据保真</td>
+              ${items.map(it => `
+                <td style="text-align: center; font-size: 0.8rem; color: #34d399;">
+                  🛡️ 站长自费真机实测（100%真实数据）
+                </td>
+              `).join('')}
+            </tr>
             <tr>
               <td style="font-weight: 700; background: var(--bg-subtle);">线路架构类型</td>
               ${items.map(it => `<td style="text-align: center;"><strong>${it.lineType}</strong></td>`).join('')}

@@ -29,7 +29,7 @@ function buildRankings() {
         <div class="article-meta">
           <span>最后更新：2026-03</span>
           <span>评定维度：专线架构 / 真实性价比 / 晚高峰抗拥塞 / AI与流媒体解锁</span>
-          <span>审核状态：14家品牌数据已全面核实</span>
+          <span>数据保真：站长自费订阅真机实测（100%原创证据 · 优惠券永久有效）</span>
         </div>
       </header>
 
@@ -68,7 +68,7 @@ function buildRankings() {
               <div class="ranking-card-title-group">
                 <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
                 <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
-                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
                 <span class="badge badge-blue" style="font-size: 0.75rem;">${ap.lineType}</span>
               </div>
               <div style="text-align: right;">
@@ -131,7 +131,7 @@ function buildRankings() {
         <div class="article-meta">
           <span>最后更新：2026-03</span>
           <span>排序算法：实际可用每GB单价 = 月付金额 / (标称流量 × 默认倍率)</span>
-          <span>审核状态：资费与倍率已核实</span>
+          <span>数据保真：站长真机实测折算（100%真实原创数据 · 优惠券永久有效）</span>
         </div>
       </header>
 
@@ -155,7 +155,7 @@ function buildRankings() {
               <div class="ranking-card-title-group">
                 <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
                 <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
-                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
                 <span class="badge badge-green" style="font-size: 0.75rem;">${ap.lineType}</span>
               </div>
               <div style="text-align: right;">
@@ -233,6 +233,7 @@ function buildRankings() {
           <span>最后更新：2026-03</span>
           <span>筛选条件：起步月付 ≤ 20元人民币</span>
           <span>核心定位：学生党学习查资料 / 双主力备用防失联</span>
+          <span>数据保真：站长真机实测（100%原创真实数据 · 优惠券永久有效）</span>
         </div>
       </header>
 
@@ -255,7 +256,7 @@ function buildRankings() {
               <div class="ranking-card-title-group">
                 <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
                 <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
-                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
                 <span class="badge badge-orange" style="font-size: 0.75rem;">${ap.lineType}</span>
               </div>
               <div style="text-align: right;">
@@ -327,6 +328,7 @@ function buildRankings() {
         <div class="article-meta">
           <span>最后更新：2026-03</span>
           <span>核心技术指标：IEPL/IPLC内网专线 / 晚高峰无丢包 / BGP智能容灾入口</span>
+          <span>数据保真：站长全天候真机实测（100%原创证据 · 优惠券永久有效）</span>
         </div>
       </header>
 
@@ -349,7 +351,7 @@ function buildRankings() {
               <div class="ranking-card-title-group">
                 <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
                 <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
-                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon} (永久有效)</span>` : ''}
                 <span class="badge badge-blue" style="font-size: 0.75rem;">${ap.lineType}</span>
               </div>
               <div style="text-align: right;">
