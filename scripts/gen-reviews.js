@@ -7,9 +7,19 @@ function buildReviews() {
 
   airports.forEach((ap, idx) => {
     const dossier = BRAND_DOSSIERS[ap.id] || {};
+    const airportName = dossier.airportName || ap.name;
+    const pageTitle = dossier.pageTitle || `${airportName}怎么样？2026最新套餐价格、流量规格、节点线路与真实测速信息深度评测 | 选机场网`;
+    const h1Title = dossier.h1Title || `${airportName}怎么样？2026最新套餐价格、流量规格、节点线路与晚高峰测速信息深度评测`;
+    const metaDesc = dossier.metaDesc || `2026年${airportName}全面深度评测报告。详细解答${airportName}怎么样？全面公开最新套餐价格、流量规格、节点线路分布与晚高峰真实测速信息。`;
+    const metaKeywords = dossier.metaKeywords || `${ap.name}, ${airportName}, ${ap.name}怎么样, ${ap.name}套餐价格, ${ap.name}流量, ${ap.name}节点, ${ap.name}测速, 机场推荐, 梯子推荐, vpn评测`;
+
     // 上下家评测循环导航
     const prevAp = idx > 0 ? airports[idx - 1] : airports[airports.length - 1];
     const nextAp = idx < airports.length - 1 ? airports[idx + 1] : airports[0];
+    const prevDossier = BRAND_DOSSIERS[prevAp.id] || {};
+    const nextDossier = BRAND_DOSSIERS[nextAp.id] || {};
+    const prevAirportName = prevDossier.airportName || prevAp.name;
+    const nextAirportName = nextDossier.airportName || nextAp.name;
     const otherAirports = airports.filter(a => a.id !== ap.id);
 
     const content = `
@@ -21,7 +31,7 @@ function buildReviews() {
             <span class="badge badge-green">数据核验：官方公开参数 + 晚高峰真机实测</span>
             ${ap.coupon ? `<span class="badge badge-orange">专属优惠码: ${ap.coupon}</span>` : ''}
           </div>
-          <h1 style="font-size: 2.15rem; margin-top: 0.25rem; margin-bottom: 0.75rem; line-height: 1.35;">${ap.name}怎么样？2026深度评测：套餐资费、节点线路、晚高峰测速与AI防封全景剖析</h1>
+          <h1 style="font-size: 2.15rem; margin-top: 0.25rem; margin-bottom: 0.75rem; line-height: 1.35;">${h1Title}</h1>
           <div class="article-meta">
             <span>最后核验日期：${ap.lastVerified}</span>
             <span>线路类型：${ap.lineType}</span>
@@ -301,11 +311,11 @@ function buildReviews() {
         <nav class="article-pagination" aria-label="评测上下篇导航">
           <a href="${root}review/${prevAp.slug}/index.html" class="pagination-item prev">
             <span class="pagination-label">&larr; 上一家评测 · ${prevAp.lineType}</span>
-            <span class="pagination-title">${prevAp.name} 深度评测 (综合评分: ${prevAp.overallRating})</span>
+            <span class="pagination-title">${prevAirportName} 深度评测 (综合评分: ${prevAp.overallRating})</span>
           </a>
           <a href="${root}review/${nextAp.slug}/index.html" class="pagination-item next">
             <span class="pagination-label">下一家评测 · ${nextAp.lineType} &rarr;</span>
-            <span class="pagination-title">${nextAp.name} 深度评测 (综合评分: ${nextAp.overallRating})</span>
+            <span class="pagination-title">${nextAirportName} 深度评测 (综合评分: ${nextAp.overallRating})</span>
           </a>
         </nav>
 
@@ -313,20 +323,23 @@ function buildReviews() {
         <div class="related-articles-section" style="margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px dashed var(--border-light);">
           <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-main);">🔍 更多主流机场独立评测推荐</h3>
           <div class="cards-grid-3">
-            ${otherAirports.slice(0, 3).map(oa => `
+            ${otherAirports.slice(0, 3).map(oa => {
+              const oaDossier = BRAND_DOSSIERS[oa.id] || {};
+              const oaName = oaDossier.airportName || oa.name;
+              return `
               <a href="${root}review/${oa.slug}/index.html" class="category-card" style="padding: 1.25rem;">
                 <span class="badge badge-blue" style="font-size: 0.7rem; align-self: flex-start; margin-bottom: 0.5rem;">${oa.lineType}</span>
-                <h4 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.35rem; line-height: 1.4;">${oa.name}（评分: ${oa.overallRating}）</h4>
+                <h4 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.35rem; line-height: 1.4;">${oaName}（评分: ${oa.overallRating}）</h4>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">起步 ¥${oa.startingPrice}/月 · ${oa.advantages[0]}</p>
               </a>
-            `).join('')}
+            `}).join('')}
           </div>
         </div>
       </div>
 
       <aside class="article-sidebar">
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">${ap.name}评测核心参数</div>
+          <div class="sidebar-widget-title">${airportName}核心参数</div>
           <div style="font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.6rem;">
             <div><strong>起步价格：</strong><span style="color: var(--primary); font-weight: bold;">¥${ap.startingPrice}</span> / 月起</div>
             <div><strong>线路架构：</strong>${ap.lineType}</div>
@@ -337,7 +350,7 @@ function buildReviews() {
             <div><strong>综合评分：</strong><span style="color: var(--primary); font-weight: bold; font-size: 1.15rem;">${ap.overallRating}</span> / 10</div>
           </div>
           <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 0.5rem;">
-            <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm" style="width: 100%;">前往${ap.name}官网</a>
+            <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm" style="width: 100%;">前往${airportName}官网</a>
             <a href="${root}compare/index.html" class="btn btn-outline btn-sm" style="width: 100%;">加入在线横向对比</a>
           </div>
         </div>
@@ -362,9 +375,12 @@ function buildReviews() {
         <div class="sidebar-widget">
           <div class="sidebar-widget-title">全部14大品牌独立评测</div>
           <ul class="toc-list" style="max-height: 380px; overflow-y: auto;">
-            ${airports.map(a => `
-              <li><a href="${root}review/${a.slug}/index.html" ${a.id === ap.id ? 'style="color: var(--primary); font-weight: bold;"' : ''}>${a.name}独立评测</a></li>
-            `).join('')}
+            ${airports.map(a => {
+              const aDossier = BRAND_DOSSIERS[a.id] || {};
+              const aName = aDossier.airportName || a.name;
+              return `
+              <li><a href="${root}review/${a.slug}/index.html" ${a.id === ap.id ? 'style="color: var(--primary); font-weight: bold;"' : ''}>${aName}独立评测</a></li>
+            `}).join('')}
           </ul>
         </div>
       </aside>
@@ -373,13 +389,13 @@ function buildReviews() {
 
     buildPage({
       relPath: `review/${ap.slug}/index.html`,
-      title: `${ap.name}怎么样？2026真实套餐价格、线路特点与综合评测 | 选机场网`,
-      description: `2026年${ap.name}深度独立评测报告。详细剖析${ap.name}套餐价格、线路架构类型、晚高峰丢包实测、流媒体与ChatGPT解锁表现、真实优缺点及适合人群，实事求是拒绝虚假跑分。`,
-      keywords: `${ap.name}, ${ap.name}评测, ${ap.name}怎么样, 机场推荐, 梯子推荐, vpn评测`,
+      title: pageTitle,
+      description: metaDesc,
+      keywords: metaKeywords,
       canonicalUrl: `${DOMAIN}/review/${ap.slug}/`,
       depth,
       activeNav: 'review',
-      breadcrumbs: [{ name: '机场评测', url: `${root}review/index.html` }, { name: `${ap.name}评测报告` }],
+      breadcrumbs: [{ name: '机场评测', url: `${root}review/index.html` }, { name: `${airportName}评测报告` }],
       bodyContent: content
     });
   });
@@ -402,17 +418,19 @@ function buildReviews() {
       <div class="cards-grid-3">
         ${airports.map(ap => {
           const dossier = BRAND_DOSSIERS[ap.id] || {};
+          const airportName = dossier.airportName || ap.name;
+          const h1Title = dossier.h1Title || `${airportName}怎么样？2026最新套餐价格、流量规格、节点线路与晚高峰测速信息深度评测`;
           return `
           <div class="airport-card">
             <div class="card-top">
               <div>
-                <h2 style="font-size: 1.25rem; margin: 0;"><a href="${rootIndex}review/${ap.slug}/index.html">${ap.name}</a></h2>
+                <h2 style="font-size: 1.25rem; margin: 0;"><a href="${rootIndex}review/${ap.slug}/index.html">${airportName}</a></h2>
                 <span class="airport-tag">${ap.lineType}</span>
               </div>
               <span class="badge badge-blue">评分 ${ap.overallRating}</span>
             </div>
-            <div style="font-size: 0.8rem; color: #60a5fa; font-weight: 600; margin: 0.4rem 0 0.5rem 0;">
-              ${dossier.tagline || ''}
+            <div style="font-size: 0.825rem; color: #60a5fa; font-weight: 600; margin: 0.45rem 0 0.5rem 0; line-height: 1.4;">
+              ${h1Title}
             </div>
             <p style="font-size: 0.875rem; color: var(--text-body); margin: 0 0 1rem 0; line-height: 1.6;">${ap.description}</p>
             <ul class="card-features-list">
