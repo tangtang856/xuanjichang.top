@@ -98,6 +98,7 @@ function renderFooter(depth) {
       </div>
     </div>
   </footer>
+  <script src="${root}js/globe-dots.js"></script>
   <script src="${root}js/main.js"></script>
   `;
 }

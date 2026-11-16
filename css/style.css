@@ -26,7 +26,7 @@
   --text-muted: #94a3b8;
   --text-light: #64748b;
   
-  --bg-page: #070a13;
+  --bg-page: #070614;
   --bg-card: rgba(15, 23, 42, 0.78);
   --bg-subtle: rgba(30, 41, 59, 0.65);
   --bg-hover: rgba(30, 41, 59, 0.9);
@@ -66,9 +66,9 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-page);
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.16) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    radial-gradient(circle at 75% 25%, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 20% 75%, rgba(34, 211, 238, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 65%);
   background-attachment: fixed;
   color: var(--text-body);
   line-height: 1.65;
@@ -89,7 +89,7 @@ body {
   height: 100vh;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.88;
+  opacity: 0.95;
 }
 
 /* 链接与排版 */
