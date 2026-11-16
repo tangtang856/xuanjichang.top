@@ -72,59 +72,279 @@
     <a href="../index.html">首页</a> <span class="breadcrumbs-separator">/</span> <span>机场推荐</span></nav>
   <main>
     
-    <div class="container" style="padding: 3rem 1.25rem;">
-      <header style="margin-bottom: 2.5rem; text-align: center;">
-        <span class="badge badge-blue">场景化分类</span>
-        <h1 style="font-size: 2.3rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">机场场景化专题推荐中心</h1>
-        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
-          根据您的实际应用场景、预算承受力及网络用途，快速进入对应细分推荐专题。
+    <div class="container" style="padding: 2.5rem 1.25rem 4rem 1.25rem;">
+      <header class="article-header" style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge badge-blue">场景化分类指引</span>
+        <h1 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">机场场景化专题推荐中心</h1>
+        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+          根据您的实际应用场景、预算承受力及网络用途，选机场网为您系统拆解六大核心使用场景的选购逻辑与避坑建议，助您快速锁定最契合的机场方案。
         </p>
       </header>
 
-      <div class="cards-grid-3">
+      <!-- 顶部快速场景直达导航条 -->
+      <div class="ranking-nav-tabs" style="justify-content: center; margin-bottom: 2.5rem;">
+        <a href="#scenario-budget" class="ranking-tab">💰 低预算入门</a>
+        <a href="#scenario-premium" class="ranking-tab">🚀 高端专线</a>
+        <a href="#scenario-beginner" class="ranking-tab">🔰 新手入门</a>
+        <a href="#scenario-stable" class="ranking-tab">🛡️ 稳定优先</a>
+        <a href="#scenario-ai" class="ranking-tab">🤖 AI服务适配</a>
+        <a href="#scenario-streaming" class="ranking-tab">🎬 流媒体解锁</a>
+      </div>
+
+      <!-- 六大核心场景文章专区 (每个都有一小段文章) -->
+      <div style="display: flex; flex-direction: column; gap: 1.75rem; margin-bottom: 3.5rem;">
         
-          <a href="../recommend/budget/index.html" class="category-card">
-            <div class="cat-icon">💰</div>
-            <h2 class="cat-title">平价低预算机场选购方案与推荐专题</h2>
-            <p class="cat-desc">专为在校学生党、轻度查资料用户及多设备应急备用设计的低价方案，重点关注月付10元以内起步套餐，灵活弹性不捆绑。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-budget" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">💰</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">1. 低预算入门：用极低试错成本满足基础科研与冲浪</h2>
+                <span class="badge badge-blue">低预算入门</span>
+              </div>
+              <div>
+                <a href="../recommend/budget/index.html" class="btn btn-primary btn-sm">进入低预算入门专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">对于在校大学生、学术科研人员以及仅需偶尔查阅海外文献、克隆 GitHub 代码仓库的轻度冲浪用户而言，高昂的月付或年付专线往往造成算力与带宽的闲置浪费。低预算方案的核心选购逻辑在于<strong>“月付起步、控制试错成本”</strong>，将月度支出控制在 5~15 元以内。这既能充分满足日常学术检索、Google 学术、维基百科查阅与基础网页浏览需求，又能在服务商遇到不可抗力线路调整时避免大额损失。在挑选低预算机场时，切勿盲目相信“几元不限时”或“超大TB流量”的虚标宣传，务必重点甄别节点倍率是否透明（严防 2.0x 以上暗扣流量），并优先选择提供 2~3 个常用地区节点、具备晚高峰基础可用性的平价中转方案。建议采用“一条平价主力 + 一条备用免费/签到节点”的弹性双保险策略。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>月付5-10元弹性选购，拒绝大额年付绑架</li><li>节点倍率规范透明，拒绝高倍率扣费陷阱</li><li>满足Google学术、GitHub代码下载与轻度查资料</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">学生群体、学术科研工作者、多设备应急备用防失联</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/budget/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看低预算入门精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-          <a href="../recommend/premium/index.html" class="category-card">
-            <div class="cat-icon">🚀</div>
-            <h2 class="cat-title">高端IEPL/IPLC专线机场推荐专题</h2>
-            <p class="cat-desc">基于纯正IEPL/IPLC内网物理光缆专线，不经过公网GFW审查，具备晚高峰零丢包、超低延迟抖动与高抗封锁能力。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-premium" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">🚀</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">2. 高端专线：晚高峰零丢包与超低延迟的企业级网络生命线</h2>
+                <span class="badge badge-blue">高端专线</span>
+              </div>
+              <div>
+                <a href="../recommend/premium/index.html" class="btn btn-primary btn-sm">进入高端专线专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">高端专线通常采用纯正的 <strong>IEPL（国际以太网私网专线）</strong> 或 <strong>IPLC（国际私有租用线路）</strong> 物理内网光缆直连，底层拓扑完全绕过公网 GFW 防火墙设备。这意味着在重大敏感时期或晚间用网高峰期，专线依然具备毫秒级超低延迟抖动（通常小于 5ms）与近乎零丢包的高可用表现。对于跨国企业协同办公（Slack 实时沟通、Zoom 国际高清视频会议）、境外云主机远程运维与代码推送、以及美股、港股和加密货币高频量化交易者而言，网络的哪怕单次偶发抖动都可能带来巨大的工作延误与财务风险，高端专线是保障生产力不可妥协的生命线。建议配合客户端分流规则，关键业务走专线通道，以实现带宽效能最大化。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>纯正IEPL/IPLC内网物理专线，不过防火墙审查</li><li>晚高峰延迟抖动<5ms，零丢包超强抗拥塞表现</li><li>完美胜任跨国视频会议、外贸办公与股票期货交易</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">外贸跨国企业、远程办公团队、美股/港股/加密货币交易者、追求极速的进阶极客</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/premium/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看高端专线精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-          <a href="../recommend/beginner/index.html" class="category-card">
-            <div class="cat-icon">🔰</div>
-            <h2 class="cat-title">新手小白入门机场推荐专题</h2>
-            <p class="cat-desc">面向首次接触科学上网的小白用户，提供全中文管理后台、主流客户端（Clash、小火箭）一键导入订阅及图文保姆级教程。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-beginner" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">🔰</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">3. 新手入门：零基础免配置，一键导入与全平台中文支持</h2>
+                <span class="badge badge-blue">新手入门</span>
+              </div>
+              <div>
+                <a href="../recommend/beginner/index.html" class="btn btn-primary btn-sm">进入新手入门专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">首次接触网络代理的小白用户，最容易在客户端配置、订阅链接导入、节点规则分流以及内核驱动安装上遇到阻碍，甚至可能因在不明搜索引擎下载被恶意篡改的“破解版客户端”而导致财产与隐私风险。优质的新手友好型机场必须具备两大核心特质：一是提供全中文、交互直观的管理后台，并配备面向 Windows（Clash Verge / v2rayN）、Android（v2rayNG）、iOS（Shadowrocket 小火箭 / Loon）以及 macOS 的保姆级图文教程；二是全面支持<strong>“一键导入订阅”</strong>功能，购买后仅需点击一次按钮即可将全部节点同步至客户端，无需手动复制长链接或编写复杂配置文件。若遇偶发断连，通常只需在客户端点击“更新订阅”即可自动恢复，真正实现零门槛省心上手。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>支持全平台主流客户端一键导入，5秒完成全量配置</li><li>提供图文/视频保姆级指引，避开非官方恶意软件风险</li><li>遇到失联一键更新订阅即可自动修复，售后响应及时</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">网络代理零基础小白、不愿折腾复杂规则的用户、苹果/安卓新手</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/beginner/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看新手入门精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-          <a href="../recommend/stable/index.html" class="category-card">
-            <div class="cat-icon">🛡️</div>
-            <h2 class="cat-title">稳定优先抗封锁机场推荐专题</h2>
-            <p class="cat-desc">采用多线BGP入口智能解析与内网容灾链路，单一入口故障自动秒级切换备用链路，确保全天候不断连。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-stable" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">🛡️</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">4. 稳定优先：多入口BGP智能容灾与自适应故障转移架构</h2>
+                <span class="badge badge-blue">稳定优先</span>
+              </div>
+              <div>
+                <a href="../recommend/stable/index.html" class="btn btn-primary btn-sm">进入稳定优先专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">“全天候稳定不断连”是绝大多数用户对网络代理最核心的刚性诉求。传统的单入口直连节点一旦遭遇防火墙封锁 IP，整条线路便会瞬间瘫痪；而稳定优先型机场通常采用<strong>多线 BGP 入口智能解析与多机房容灾热备架构</strong>。当监测系统发现某一入口延迟激增或发生丢包时，后端会在秒级内自动完成流量重路由与入口热备切换，用户在前端几乎感知不到网络波动。对于追求极致稳定的日常主力用户，建议在客户端中开启“自动故障转移（Fallback）”或“延迟自动测速（URL-Test）”策略组，由客户端内核自动探活并切换至最优节点，同时可搭配一主一备两条不同服务商的订阅，彻底告别频繁手动测试节点的繁琐困扰。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>多线BGP入口智能解析，单一机房故障秒级自动热备切换</li><li>配合Fallback与URL-Test策略组，全自动优选延迟最低链路</li><li>重大节假日与敏感敏感期依然保持高连通可用性</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">全天候依赖海外网络的主力冲浪者、跨境电商运营、高可靠网络需求者</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/stable/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看稳定优先精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-          <a href="../recommend/ai/index.html" class="category-card">
-            <div class="cat-icon">🤖</div>
-            <h2 class="cat-title">AI大模型专用机场推荐（原生纯净IP解锁）</h2>
-            <p class="cat-desc">专为OpenAI ChatGPT、Anthropic Claude、Midjourney及Google Gemini打造，精选拥有海外原生纯净住宅级IP的节点。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-ai" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">🤖</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">5. AI服务适配：原生纯净住宅IP深度适配，杜绝风控与封号</h2>
+                <span class="badge badge-blue">AI服务适配</span>
+              </div>
+              <div>
+                <a href="../recommend/ai/index.html" class="btn btn-primary btn-sm">进入AI服务适配专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">随着以 OpenAI ChatGPT（GPT-4o）、Anthropic Claude 3.5 Sonnet、Google Gemini 及 Midjourney 为代表的 AI 工具深度融入日常工作，AI 场景对网络节点的品质提出了前所未有的苛刻要求。这些前沿 AI 服务商普遍部署了全球最严格的 IP 信用评级与反作弊风控体系，普通的机房数据中心（IDC 广播 IP）极易被判定为机房流量而遭遇频繁的“Access Denied”、“Unable to load conversation”甚至直接封禁账号。专业的 AI 适配机场专门精选了<strong>海外本地原生 IP（双 ISP / 纯净住宅级 IP）</strong>，并对针对 Claude 等敏感域名的 DNS 劫持防护与 TLS 客户端指纹伪装进行了底层深度优化，确保对话长效不中断、API 调用不限速、海外银行卡充值订阅零风控。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>精选海外原生纯净住宅IP，彻底解决Access Denied报错</li><li>深度针对Claude 3.5与ChatGPT风控机制优化，杜绝无端封号</li><li>支持API高频请求与第三方AI客户端长连接，稳定高效</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">AI重度工作者、Prompt工程师、ChatGPT Plus/Claude Pro订阅用户、海外模型开发者</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/ai/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看AI服务适配精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-          <a href="../recommend/streaming/index.html" class="category-card">
-            <div class="cat-icon">🎬</div>
-            <h2 class="cat-title">Netflix与Disney+ 4K流媒体专用机场推荐</h2>
-            <p class="cat-desc">针对Netflix跨区解锁、Disney+、YouTube Premium、HBO Max及日韩本地流媒体深度优化，原生DNS解锁秒开4K/8K。</p>
-            <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
-          </a>
+          <div id="scenario-streaming" class="ranking-item-card" style="margin-bottom: 0;">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span style="font-size: 1.4rem;">🎬</span>
+                <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--text-main);">6. 流媒体解锁：4K/8K超清秒开，全区Netflix与Disney+原生分流</h2>
+                <span class="badge badge-blue">流媒体解锁</span>
+              </div>
+              <div>
+                <a href="../recommend/streaming/index.html" class="btn btn-primary btn-sm">进入流媒体解锁专题 &rarr;</a>
+              </div>
+            </div>
+
+            <div style="margin: 1rem 0; font-size: 0.975rem; line-height: 1.8; color: var(--text-body);">
+              <p style="margin-bottom: 0.75rem;">海外主流流媒体平台（Netflix 网飞、Disney+、YouTube Premium、HBO Max、BBC iPlayer 等）因复杂的全球版权分销协议，对跨国访问实施了极其严格的区域阻断与机房 IP 封锁。普通代理节点在访问 Netflix 时往往只能观看无版权限制的自制剧，甚至直接弹出“您似乎使用了代理或解锁工具”的报错警告。优质的流媒体专用机场通过部署<strong>海外本土原生住宅 DNS 分流或全原生 IP 池技术</strong>，使流媒体服务器将用户的访问识别为合法的本地家庭宽带，从而完美解锁全区所有版权影视剧与特定本地片单。此外，流媒体对单线程突发带宽与持续码率有很高要求，专业专线能提供稳定 50Mbps 以上的下行吞吐，确保 4K HDR、Dolby Vision 及 8K 超清视频随拖随播、杜绝画质降级。</p>
+            </div>
+
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 选购核心要点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>原生DNS与原生IP分流解锁Netflix全区非自制剧、Disney+与HBO</li><li>晚高峰单线程带宽充裕，4K HDR/8K拖拽进度条不卡顿不缓冲</li><li>全面兼容Apple TV、Android TV电视盒子与游戏主机大屏追剧</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: #60a5fa; font-size: 0.875rem;">🎯 适合人群与场景：</strong>
+                <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">海外影视追剧爱好者、4K/8K极清影音发烧友、电视盒子家庭共享用户</p>
+                <div style="margin-top: 0.5rem;">
+                  <a href="../recommend/streaming/index.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">查看流媒体解锁精选机场评测与套餐列表 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
+      </div>
+
+      <!-- 场景化专题卡片快速入口 -->
+      <div style="margin-top: 3.5rem;">
+        <div style="text-align: center; margin-bottom: 1.75rem;">
+          <h2 style="font-size: 1.6rem; color: var(--text-main);">六大场景专题独立入口</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">点击卡片可直接进入专题详情页，查看符合各场景标准的精选机场完整测评与资费对比</p>
+        </div>
+        <div class="cards-grid-3">
+          
+            <a href="../recommend/budget/index.html" class="category-card">
+              <div class="cat-icon">💰</div>
+              <h3 class="cat-title">平价低预算机场选购方案与推荐专题</h3>
+              <p class="cat-desc">专为在校学生党、轻度查资料用户及多设备应急备用设计的低价方案，重点关注月付10元以内起步套餐，灵活弹性不捆绑。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+            <a href="../recommend/premium/index.html" class="category-card">
+              <div class="cat-icon">🚀</div>
+              <h3 class="cat-title">高端IEPL/IPLC专线机场推荐专题</h3>
+              <p class="cat-desc">基于纯正IEPL/IPLC内网物理光缆专线，不经过公网GFW审查，具备晚高峰零丢包、超低延迟抖动与高抗封锁能力。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+            <a href="../recommend/beginner/index.html" class="category-card">
+              <div class="cat-icon">🔰</div>
+              <h3 class="cat-title">新手小白入门机场推荐专题</h3>
+              <p class="cat-desc">面向首次接触科学上网的小白用户，提供全中文管理后台、主流客户端（Clash、小火箭）一键导入订阅及图文保姆级教程。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+            <a href="../recommend/stable/index.html" class="category-card">
+              <div class="cat-icon">🛡️</div>
+              <h3 class="cat-title">稳定优先抗封锁机场推荐专题</h3>
+              <p class="cat-desc">采用多线BGP入口智能解析与内网容灾链路，单一入口故障自动秒级切换备用链路，确保全天候不断连。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+            <a href="../recommend/ai/index.html" class="category-card">
+              <div class="cat-icon">🤖</div>
+              <h3 class="cat-title">AI大模型专用机场推荐（原生纯净IP解锁）</h3>
+              <p class="cat-desc">专为OpenAI ChatGPT、Anthropic Claude、Midjourney及Google Gemini打造，精选拥有海外原生纯净住宅级IP的节点。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+            <a href="../recommend/streaming/index.html" class="category-card">
+              <div class="cat-icon">🎬</div>
+              <h3 class="cat-title">Netflix与Disney+ 4K流媒体专用机场推荐</h3>
+              <p class="cat-desc">针对Netflix跨区解锁、Disney+、YouTube Premium、HBO Max及日韩本地流媒体深度优化，原生DNS解锁秒开4K/8K。</p>
+              <div class="cat-footer">进入专题查看精选方案 &rarr;</div>
+            </a>
+          
+        </div>
       </div>
     </div>
     
