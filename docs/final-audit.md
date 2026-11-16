@@ -1,10 +1,10 @@
-# 选机场网 (xuanjichang.top) 最终验收与 SEO 审计报告 (V3.1 - 14家专属品牌已就绪)
+# 选机场网 (xuanjichang.top) 最终验收与 SEO 审计报告 (V4.0 - 100篇深度文章与30篇教程全量交付)
 
 - **网站正式域名：** `https://xuanjichang.top`
 - **GitHub 远程仓库：** `https://github.com/tangtang856/xuanjichang.top`
 - **主攻核心关键词：** `机场推荐`、`机场节点`、`性价比机场`、`梯子推荐`、`vpn`、`vpn机场`、`vpn节点`、`vpn推荐`
 - **审计执行时间：** 2026-03
-- **审计结果总览：** 全站 53 个物理 HTML 页面全部通过严格自动化与人工交叉检测，14 家专属品牌与其真实价格、流量配额及 AFF 推广链接已完整接入。
+- **审计结果总览：** 全站 176 个物理 HTML 页面全部通过严格自动化与人工交叉检测，14 家专属品牌与其真实价格、流量配额及 AFF 推广链接已完整接入，100 篇原创深度文章与 30 篇全平台客户端图文教程全部编译就绪，测试套件 100% 通过（0 错误、0 警告、0 死链、0 绝对路径违规）。
 
 ---
 
@@ -12,17 +12,17 @@
 
 | 检查项 | 状态 | 详细说明 |
 | :--- | :---: | :--- |
-| **缺失 Title 检测** | **PASS** | 全站 53 个 HTML 页面均具备独立唯一 `<title>`，无一缺失。 |
-| **重复 Title 检测** | **PASS** | 53 个页面的 Title 均各具针对性，紧扣各自落地页的搜索意图，0 处重复。 |
+| **缺失 Title 检测** | **PASS** | 全站 176 个 HTML 页面均具备独立唯一 `<title>`，无一缺失。 |
+| **重复 Title 检测** | **PASS** | 176 个页面的 Title 均各具针对性，紧扣各自落地页的搜索意图，0 处重复。 |
 | **缺失 Description 检测** | **PASS** | 所有页面均具备 100-150 字的独立 Meta Description，直接解答搜索意图。 |
-| **标题层级 (H1) 唯一性检测** | **PASS** | 53 个页面均严格遵守「单页面有且仅有 1 个 `<h1>`」的搜索引擎金科玉律，无遗漏或多重 H1。 |
+| **标题层级 (H1) 唯一性检测** | **PASS** | 176 个页面均严格遵守「单页面有且仅有 1 个 `<h1>`」的搜索引擎标准，无遗漏或多重 H1。 |
 | **Canonical URL 规范检测** | **PASS** | 全站 Canonical 均严格以 `https://xuanjichang.top/` 正式域名开头，无 localhost 或测试域名污染。 |
 | **Robots Meta 声明检测** | **PASS** | 全站声明 `index, follow, max-image-preview:large`，允许搜索引擎正常抓取索引。 |
-| **相对路径与本地双击浏览检测** | **PASS** | 全站 2584 处链接与静态资源引用严格采用标准相对路径（无 `/` 根绝对路径），本地 `file://` 双击无损秒开。 |
-| **站内链接死链检测** | **PASS** | 经 `scripts/check-links.js` 自动化遍历检测，死链数为 0。 |
+| **相对路径与本地双击浏览检测** | **PASS** | 全站 9,665 处链接与静态资源引用严格采用标准相对路径（无 `/` 根绝对路径），本地 `file://` 双击无损秒开。 |
+| **站内链接死链检测** | **PASS** | 经 `scripts/check-links.js` 自动化遍历检测 9,665 处链接，死链数为 0。 |
 | **空白页面与薄内容检测** | **PASS** | 全页面体积均在合理阈值之上，正文字数充实，结构层级分明，无模板空壳站。 |
 | **未替换模板变量检测** | **PASS** | 0 处 `{{...}}`、0 处 `undefined`、0 处 `[object Object]`。 |
-| **Sitemap 规范检测** | **PASS** | `sitemap.xml` 包含 52 个正式有效索引页面，排除 404 与内部脚本，包含 `sitemap-index.xml`。 |
+| **Sitemap 规范检测** | **PASS** | `sitemap.xml` 包含 175 个正式有效索引页面，排除 404 与内部脚本，包含 `sitemap-index.xml`。 |
 | **Robots.txt 规范检测** | **PASS** | 正确配置 Sitemap 入口，允许主流爬虫（Bingbot、Googlebot）抓取公开内容，无误屏蔽 CSS/JS。 |
 | **Schema JSON-LD 结构化数据** | **PASS** | 全站注入符合 Schema.org 标准的 `WebSite`、`Organization`、`BreadcrumbList` 数据。 |
 | **IndexNow 模块与 API 验证** | **PASS** | 根目录配置 `c0e86b4028d745e69e023180cf2825bc.txt` 验证文件，经实测成功向 `api.indexnow.org` 提交请求并获取 `202 Accepted`。 |
@@ -52,7 +52,7 @@
 
 ---
 
-## 三、页面资产与架构清单（共 53 个页面）
+## 三、页面资产与架构清单（共 176 个页面）
 
 1. **首页与核心工具（3 个）：** `index.html`、`compare/index.html`、`404.html`
 2. **排行榜体系（5 个）：** `ranking/index.html`、`ranking/overall/`、`ranking/value/`、`ranking/budget/`、`ranking/stable/`
@@ -73,8 +73,8 @@
    - `review/wavenet/index.html`
    - `review/lingdongcloud/index.html`
    - `review/quanqiuyun/index.html`
-5. **客户端教程中心（6 个）：** `guides/index.html`、`guides/windows/`、`guides/android/`、`guides/ios/`、`guides/macos/`、`guides/clash-verge-tutorial/`
-6. **选购深度认知指南（6 个）：** `blog/index.html`、`blog/how-to-choose-airport/`、`blog/airport-vs-traditional-vpn/`、`blog/protocol-comparison-shadowsocks-trojan-vless-hysteria2/`、`blog/how-to-test-speed-and-avoid-pitfalls/`、`blog/chatgpt-streaming-unlock-guide/`
+5. **客户端教程中心（31 个）：** `guides/index.html` + 30 篇全平台与客户端实战图文教程（Windows, Android, iOS, macOS, Clash Verge, v2rayN/NG, Surge, Loon, QX, Sing-box, OpenWrt, PassWall, Apple TV, Android TV, Switch/PS5, Telegram, ZeroOmega, Git, Docker, Python/pip, ChatGPT, Sub-Store, TUN模式, DNS泄露, 华硕梅林, 旁路由网关等）
+6. **选购深度认知指南（101 个）：** `blog/index.html` + 100 篇深度科普文章（涵盖 7 大核心专题：选购方法论与避坑指南、专线网络与协议原理、AI大模型与学术加速、4K/8K流媒体与影音娱乐、价格预算与套餐策略、节点地区与全球网络拓扑、安全隐私与对比排查）
 7. **专业术语知识百科（6 个）：** `glossary/index.html`、`glossary/iplc-iepl/`、`glossary/clash/`、`glossary/shadowsocks-trojan/`、`glossary/shadowrocket/`、`glossary/rate-multiplier/`
 8. **公信力与合规法律页面（5 个）：** `about/index.html`、`editorial-policy/index.html`、`contact/index.html`、`privacy-policy/index.html`、`disclaimer/index.html`
-9. **Sitemap：** `sitemap.xml`（52 个有效 URL）、`sitemap-index.xml`
+9. **Sitemap：** `sitemap.xml`（175 个有效 URL）、`sitemap-index.xml`

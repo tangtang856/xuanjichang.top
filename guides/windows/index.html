@@ -74,12 +74,12 @@
     <div class="container article-container">
       <div class="article-main">
         <header class="article-header">
-          <span class="badge badge-blue">平台专属教程</span>
+          <span class="badge badge-blue">桌面系统</span>
           <h1 style="font-size: 2.1rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">Windows平台客户端安装与订阅配置教程</h1>
           <div class="article-meta">
-            <span>更新时间：2026-03</span>
-            <span>适配客户端：Clash Verge Rev / v2rayN</span>
-            <span>实操验证：已在最新系统环境下测试通过</span>
+            <span>最后更新：2026-03</span>
+            <span>适配工具：Clash Verge Rev / v2rayN</span>
+            <span>实测状态：已在最新操作系统环境下实操验证</span>
           </div>
         </header>
 
@@ -88,9 +88,9 @@
         </p>
 
         <div class="quick-answer-card" style="margin-top: 0;">
-          <div class="quick-answer-header">📌 30秒极速上手速记</div>
+          <div class="quick-answer-header">📌 30秒极速配置核心思路</div>
           <p style="margin-bottom: 0; font-size: 0.95rem;">
-            配置科学上网的通用逻辑非常纯粹：<strong>【下载正规客户端】&rarr;【在机场后台复制订阅URL】&rarr;【在客户端中导入并拉取节点】&rarr;【选择规则分流模式并开启系统代理】</strong>。全过程通常仅需 2-3 分钟。
+            科学上网客户端配置逻辑非常清晰纯粹：<strong>【下载正规正版客户端】&rarr;【在机场用户后台复制订阅URL】&rarr;【在客户端中导入并拉取节点】&rarr;【选择规则分流模式并开启系统代理/VPN】</strong>。整个流程通常仅需 2-3 分钟即可完成。
           </p>
         </div>
 
@@ -98,30 +98,30 @@
           <h2>详细步骤分解图文教学</h2>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤一：下载官方正版客户端</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤一：下载官方正版客户端安装包</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                请认准开源社区官方 GitHub Release 页面下载（如 Clash Verge Rev 的 .exe 安装包），切勿通过来历不明的第三方网盘或所谓“汉化破解站”下载，防止被植入后门程序。
+                请前往开源社区官方 GitHub Release 页面下载 Clash Verge Rev 的 Windows x64 .exe 安装程序，切勿通过未经认证的第三方网盘下载，防止程序被恶意篡改。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤二：复制机场订阅链接</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤二：在机场用户后台复制订阅链接</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                登录您的机场用户管理后台，在“便捷导入”区域找到“Clash订阅”或“一键复制订阅链接”，将其复制到剪贴板。
+                登录您选用的机场控制面板，在“订阅管理”或“快速配置”区域找到“Clash订阅”或“一键导入订阅”，点击复制到剪贴板。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤三：导入订阅并拉取节点</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤三：导入订阅并拉取节点配置</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                打开 Clash Verge Rev，进入“订阅（Profiles）”界面，在输入框粘贴刚刚复制的订阅链接，点击“保存并导入（Save）”。软件将自动从远端服务器下载最新的节点列表与分流规则。
+                打开 Clash Verge Rev，点击左侧“订阅（Profiles）”导航，在顶部输入框粘贴订阅 URL，点击“保存并导入（Save）”，客户端将自动下载最新节点拓扑与分流规则。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤四：选择节点并开启系统代理</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤四：选择规则模式并开启系统代理</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                进入“代理（Proxies）”界面，选择“规则分流（Rule）”模式，并在节点列表中选择一个低延迟节点（如香港或日本节点）。最后在“设置”中勾选“系统代理（System Proxy）”，即可顺畅浏览全球网络。
+                切换到“代理（Proxies）”界面，模式选择“规则（Rule）”，选择延迟较低的低倍率香港或日本节点。在通用设置中打开“系统代理（System Proxy）”开关即可畅游全球。
               </p>
             </div>
           
@@ -135,17 +135,17 @@
                   <span class="faq-indicator">+</span>
                 </div>
                 <div class="faq-answer" style="display: none;">
-                  请确保代理模式设置为「规则（Rule）」而不是「全局（Global）」。在规则模式下，国内网站流量直连不耗费节点流量，只有海外受限域名才会走代理。
+                  请确保代理模式设置为「规则（Rule）」而不是「全局（Global）」。规则模式下国内直连不耗流量，海外受限网站才走代理。
                 </div>
               </div>
             
               <div class="faq-item">
                 <div class="faq-question">
-                  <span>更新订阅时提示网络错误或超时？</span>
+                  <span>更新订阅时提示网络超时或解析错误？</span>
                   <span class="faq-indicator">+</span>
                 </div>
                 <div class="faq-answer" style="display: none;">
-                  可能当前本地网络访问该机场订阅转换服务器稍慢。可在机场后台切换“备用订阅链接”或更换网络连接后重试。
+                  检查本地网络是否通畅，或在机场后台切换备用订阅域名后重新尝试拉取。
                 </div>
               </div>
             
@@ -153,39 +153,50 @@
 
           <h2 style="margin-top: 2.5rem;">推荐搭配的高兼容性机场</h2>
           <p>
-            拥有良好的客户端软件只是第一步，稳定可靠的节点订阅才是连接全球的核心。若您尚未选定合适的服务商，可以参考以下经过兼容性验证的代表性品牌：
+            拥有优秀的客户端是第一步，稳定可靠的节点订阅才是连接全球的核心。若您尚未选定合适的服务商，可以参考以下经过兼容性验证的代表性品牌：
           </p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
             <a href="../../ranking/overall/index.html" class="btn btn-primary btn-sm">查看综合实力榜</a>
             <a href="../../ranking/value/index.html" class="btn btn-outline btn-sm">查看高性价比榜</a>
             <a href="../../compare/index.html" class="btn btn-outline btn-sm">在线横向比选</a>
+            <a href="../../guides/index.html" class="btn btn-outline btn-sm">返回教程中心</a>
           </div>
         </div>
       </div>
 
       <aside class="article-sidebar">
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">全平台客户端教程</div>
+          <div class="sidebar-widget-title">更多核心客户端教程</div>
           <ul class="toc-list">
             
-              <li><a href="../../guides/windows/index.html" style="color: var(--primary); font-weight: bold;">Windows平台</a></li>
+              <li><a href="../../guides/android/index.html">Android</a></li>
             
-              <li><a href="../../guides/android/index.html" >Android</a></li>
+              <li><a href="../../guides/ios/index.html">iOS</a></li>
             
-              <li><a href="../../guides/ios/index.html" >iOS</a></li>
+              <li><a href="../../guides/macos/index.html">macOS</a></li>
             
-              <li><a href="../../guides/macos/index.html" >macOS</a></li>
+              <li><a href="../../guides/clash-verge-tutorial/index.html">Clash Verge Rev </a></li>
             
-              <li><a href="../../guides/clash-verge-tutorial/index.html" >Clash Verge Rev </a></li>
+              <li><a href="../../guides/v2rayn-windows-guide/index.html">v2rayN 电脑客户端新手配置与节点测速教程</a></li>
+            
+              <li><a href="../../guides/v2rayng-android-guide/index.html">v2rayNG 安卓手机客户端下载配置与分流教程</a></li>
+            
+              <li><a href="../../guides/surge-macos-guide/index.html">Surge for Mac 专家级网络代理与分流实战教程</a></li>
+            
+              <li><a href="../../guides/surge-ios-guide/index.html">Surge iOS 客户端高级订阅导入与模块定制教程</a></li>
             
           </ul>
+          <div style="margin-top: 1rem; text-align: right;">
+            <a href="../../guides/index.html" style="font-size: 0.85rem; color: var(--primary);">查看全部 30 篇教程 &rarr;</a>
+          </div>
         </div>
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">知识科普</div>
+          <div class="sidebar-widget-title">网络与技术解密</div>
           <ul class="toc-list">
-            <li><a href="../../glossary/clash/index.html">什么是Clash与Meta内核？</a></li>
+            <li><a href="../../glossary/clash/index.html">什么是 Clash 与 Meta 内核？</a></li>
             <li><a href="../../glossary/shadowrocket/index.html">小火箭核心功能详解</a></li>
-            <li><a href="../../glossary/iplc-iepl/index.html">什么是IEPL专线？</a></li>
+            <li><a href="../../glossary/iplc-iepl/index.html">什么是 IEPL 专线？</a></li>
+            <li><a href="../../blog/how-to-choose-airport/index.html">新手如何挑选适合的机场？</a></li>
           </ul>
         </div>
       </aside>

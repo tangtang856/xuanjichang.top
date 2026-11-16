@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Android手机科学上网配置教程 - Clash Meta与v2rayNG图文详解 | 选机场网</title>
-  <meta name="description" content="针对安卓系统（华为鸿蒙、小米HyperOS、OPPO ColorOS、vivo OriginOS及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta (Clash for Android) 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
+  <meta name="description" content="针对安卓系统（鸿蒙HarmonyOS、小米HyperOS、OPPO、vivo及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
   <meta name="keywords" content="Clash Meta / v2rayNG, 科学上网教程, 机场客户端, 翻墙教程, 节点导入, 订阅链接配置">
   <link rel="canonical" href="https://xuanjichang.top/guides/android/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Android手机科学上网配置教程 - Clash Meta与v2rayNG图文详解 | 选机场网">
-  <meta property="og:description" content="针对安卓系统（华为鸿蒙、小米HyperOS、OPPO ColorOS、vivo OriginOS及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta (Clash for Android) 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
+  <meta property="og:description" content="针对安卓系统（鸿蒙HarmonyOS、小米HyperOS、OPPO、vivo及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
   <meta property="og:url" content="https://xuanjichang.top/guides/android/">
   <meta property="og:site_name" content="选机场网">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Android手机科学上网配置教程 - Clash Meta与v2rayNG图文详解 | 选机场网">
-  <meta name="twitter:description" content="针对安卓系统（华为鸿蒙、小米HyperOS、OPPO ColorOS、vivo OriginOS及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta (Clash for Android) 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
+  <meta name="twitter:description" content="针对安卓系统（鸿蒙HarmonyOS、小米HyperOS、OPPO、vivo及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta 或 v2rayNG。 选机场网为您整理Clash Meta / v2rayNG的详细安装与节点订阅导入图文步骤，小白也能轻松上手。">
   <link rel="stylesheet" href="../../css/style.css">
   <script type="application/ld+json">
   {
@@ -74,23 +74,23 @@
     <div class="container article-container">
       <div class="article-main">
         <header class="article-header">
-          <span class="badge badge-blue">平台专属教程</span>
+          <span class="badge badge-blue">移动系统</span>
           <h1 style="font-size: 2.1rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">Android平台客户端配置与节点使用教程</h1>
           <div class="article-meta">
-            <span>更新时间：2026-03</span>
-            <span>适配客户端：Clash Meta / v2rayNG</span>
-            <span>实操验证：已在最新系统环境下测试通过</span>
+            <span>最后更新：2026-03</span>
+            <span>适配工具：Clash Meta / v2rayNG</span>
+            <span>实测状态：已在最新操作系统环境下实操验证</span>
           </div>
         </header>
 
         <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-body); margin-bottom: 1.5rem;">
-          针对安卓系统（华为鸿蒙、小米HyperOS、OPPO ColorOS、vivo OriginOS及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta (Clash for Android) 或 v2rayNG。
+          针对安卓系统（鸿蒙HarmonyOS、小米HyperOS、OPPO、vivo及原生Android）的完整配置指南，推荐使用基于开源Meta内核的 Clash Meta 或 v2rayNG。
         </p>
 
         <div class="quick-answer-card" style="margin-top: 0;">
-          <div class="quick-answer-header">📌 30秒极速上手速记</div>
+          <div class="quick-answer-header">📌 30秒极速配置核心思路</div>
           <p style="margin-bottom: 0; font-size: 0.95rem;">
-            配置科学上网的通用逻辑非常纯粹：<strong>【下载正规客户端】&rarr;【在机场后台复制订阅URL】&rarr;【在客户端中导入并拉取节点】&rarr;【选择规则分流模式并开启系统代理】</strong>。全过程通常仅需 2-3 分钟。
+            科学上网客户端配置逻辑非常清晰纯粹：<strong>【下载正规正版客户端】&rarr;【在机场用户后台复制订阅URL】&rarr;【在客户端中导入并拉取节点】&rarr;【选择规则分流模式并开启系统代理/VPN】</strong>。整个流程通常仅需 2-3 分钟即可完成。
           </p>
         </div>
 
@@ -98,30 +98,30 @@
           <h2>详细步骤分解图文教学</h2>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤一：安装客户端 APK 文件</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤一：安装最新开源 APK 客户端</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                通过官方 GitHub 仓库下载最新的 release .apk 安装包。安装时如遇系统提示“未知来源应用”，允许一次性安装即可。
+                通过官方 GitHub 仓库下载 Clash Meta Android 版本的 .apk 安装包。安装时如遇系统安全管家提示未知来源应用，允许单次安装即可。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤二：一键导入或手动添加配置</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤二：一键唤起导入或手动添加配置</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                登录机场后台，点击“一键导入 Clash for Android”，系统将自动唤起客户端并下载配置；若未自动唤起，可手动复制订阅 URL，在客户端“配置”中点击右上角“+”号选择“从URL导入”。
+                使用手机浏览器登录机场后台，点击“一键导入 Clash for Android”，系统将自动唤起应用；亦可复制订阅链接后在客户端“配置”中手动添加。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤三：选择配置文件并启动 VPN 服务</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤三：选择配置文件并启动 VPN 连接</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                在配置列表中勾选刚刚下载的配置方案，返回主界面点击右上角的“运行/已停止”开关。系统将弹出系统级 VPN 授权提示框，点击“允许”即可。
+                在配置列表中勾选新导入的机场订阅，返回主界面点击右上角的“运行”开关。首次使用系统会弹出 VPN 授权窗口，点击“始终允许”。
               </p>
             </div>
           
             <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤四：设置应用分流与后台保活</h3>
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">步骤四：配置后台保活与耗电白名单</h3>
               <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; line-height: 1.7;">
-                在安卓手机设置中将客户端的“电池优化”设置为“无限制/允许后台高耗电”，防止系统因省电策略在锁屏后自动杀死客户端进程。
+                在安卓手机“应用管理”中将客户端的电池优化设为“无限制”，并在多任务后台给应用加锁，防止锁屏后被系统后台杀进程导致断连。
               </p>
             </div>
           
@@ -131,11 +131,11 @@
             
               <div class="faq-item">
                 <div class="faq-question">
-                  <span>为什么手机锁屏几分钟后代理就自动断开了？</span>
+                  <span>为什么手机锁屏几分钟后代理就自动断开？</span>
                   <span class="faq-indicator">+</span>
                 </div>
                 <div class="faq-answer" style="display: none;">
-                  这是各大国产品牌手机强大的“系统级省电策略”所致。请在手机“电池与性能”设置中，将客户端加入后台白名单，并锁定后台多任务卡片。
+                  这是国产品牌手机激进的省电机制所致。请在系统设置中允许客户端后台自启动并忽略电池优化。
                 </div>
               </div>
             
@@ -143,39 +143,50 @@
 
           <h2 style="margin-top: 2.5rem;">推荐搭配的高兼容性机场</h2>
           <p>
-            拥有良好的客户端软件只是第一步，稳定可靠的节点订阅才是连接全球的核心。若您尚未选定合适的服务商，可以参考以下经过兼容性验证的代表性品牌：
+            拥有优秀的客户端是第一步，稳定可靠的节点订阅才是连接全球的核心。若您尚未选定合适的服务商，可以参考以下经过兼容性验证的代表性品牌：
           </p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
             <a href="../../ranking/overall/index.html" class="btn btn-primary btn-sm">查看综合实力榜</a>
             <a href="../../ranking/value/index.html" class="btn btn-outline btn-sm">查看高性价比榜</a>
             <a href="../../compare/index.html" class="btn btn-outline btn-sm">在线横向比选</a>
+            <a href="../../guides/index.html" class="btn btn-outline btn-sm">返回教程中心</a>
           </div>
         </div>
       </div>
 
       <aside class="article-sidebar">
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">全平台客户端教程</div>
+          <div class="sidebar-widget-title">更多核心客户端教程</div>
           <ul class="toc-list">
             
-              <li><a href="../../guides/windows/index.html" >Windows平台</a></li>
+              <li><a href="../../guides/windows/index.html">Windows平台</a></li>
             
-              <li><a href="../../guides/android/index.html" style="color: var(--primary); font-weight: bold;">Android</a></li>
+              <li><a href="../../guides/ios/index.html">iOS</a></li>
             
-              <li><a href="../../guides/ios/index.html" >iOS</a></li>
+              <li><a href="../../guides/macos/index.html">macOS</a></li>
             
-              <li><a href="../../guides/macos/index.html" >macOS</a></li>
+              <li><a href="../../guides/clash-verge-tutorial/index.html">Clash Verge Rev </a></li>
             
-              <li><a href="../../guides/clash-verge-tutorial/index.html" >Clash Verge Rev </a></li>
+              <li><a href="../../guides/v2rayn-windows-guide/index.html">v2rayN 电脑客户端新手配置与节点测速教程</a></li>
+            
+              <li><a href="../../guides/v2rayng-android-guide/index.html">v2rayNG 安卓手机客户端下载配置与分流教程</a></li>
+            
+              <li><a href="../../guides/surge-macos-guide/index.html">Surge for Mac 专家级网络代理与分流实战教程</a></li>
+            
+              <li><a href="../../guides/surge-ios-guide/index.html">Surge iOS 客户端高级订阅导入与模块定制教程</a></li>
             
           </ul>
+          <div style="margin-top: 1rem; text-align: right;">
+            <a href="../../guides/index.html" style="font-size: 0.85rem; color: var(--primary);">查看全部 30 篇教程 &rarr;</a>
+          </div>
         </div>
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">知识科普</div>
+          <div class="sidebar-widget-title">网络与技术解密</div>
           <ul class="toc-list">
-            <li><a href="../../glossary/clash/index.html">什么是Clash与Meta内核？</a></li>
+            <li><a href="../../glossary/clash/index.html">什么是 Clash 与 Meta 内核？</a></li>
             <li><a href="../../glossary/shadowrocket/index.html">小火箭核心功能详解</a></li>
-            <li><a href="../../glossary/iplc-iepl/index.html">什么是IEPL专线？</a></li>
+            <li><a href="../../glossary/iplc-iepl/index.html">什么是 IEPL 专线？</a></li>
+            <li><a href="../../blog/how-to-choose-airport/index.html">新手如何挑选适合的机场？</a></li>
           </ul>
         </div>
       </aside>

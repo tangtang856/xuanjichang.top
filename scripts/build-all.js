@@ -301,10 +301,10 @@ function buildIndexPage() {
         </div>
         <div class="airport-card">
           <span class="badge badge-green" style="align-self: flex-start; margin-bottom: 0.75rem;">协议解析</span>
-          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="${root}blog/protocol-comparison-shadowsocks-trojan-vless-hysteria2/index.html">常用代理协议深度对比：SS、Trojan、VLESS与Hysteria 2</a></h3>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="${root}blog/airport-protocol-compatibility-matrix/index.html">主流科学上网协议与各客户端兼容性全览：SS/Trojan/VLESS/Hysteria</a></h3>
           <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">全面拆解不同协议在抗封锁、延迟开销与多平台客户端支持上的实际优缺点表现。</p>
           <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.85rem; color: var(--text-muted);">
-            <span>更新于 2026-03</span> · <a href="${root}blog/protocol-comparison-shadowsocks-trojan-vless-hysteria2/index.html">阅读全文 &rarr;</a>
+            <span>更新于 2026-03</span> · <a href="${root}blog/airport-protocol-compatibility-matrix/index.html">阅读全文 &rarr;</a>
           </div>
         </div>
       </div>
