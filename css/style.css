@@ -593,7 +593,7 @@ p {
   gap: 0.25rem;
 }
 
-/* 表格与横向滚动规范 */
+/* 表格与横向布局优化 */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -605,16 +605,23 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.925rem;
-  min-width: 650px;
 }
 
 .data-table th, .data-table td {
-  padding: 0.9rem 1.2rem;
+  padding: 0.85rem 0.85rem;
   border-bottom: 1px solid var(--border-light);
   vertical-align: middle;
 }
@@ -632,6 +639,72 @@ p {
 
 .data-table tr:last-child td {
   border-bottom: none;
+}
+
+/* 文字并排与表格单元格优化 */
+.table-nowrap, .nowrap {
+  white-space: nowrap !important;
+}
+
+.table-brand-cell {
+  white-space: nowrap !important;
+  font-weight: 700;
+}
+
+.table-actions-cell {
+  white-space: nowrap !important;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* 排行榜全宽专属容器与顶部横向切换导航 */
+.ranking-container {
+  padding: 2.5rem 0 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ranking-nav-tabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ranking-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.ranking-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.ranking-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.ranking-content-body {
+  max-width: 960px;
+  margin: 2.5rem auto 0 auto;
 }
 
 .rank-badge {

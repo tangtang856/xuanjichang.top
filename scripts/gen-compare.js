@@ -47,20 +47,20 @@ function buildCompare() {
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-question">
-            <span>为什么有的机场按美元计费（如 Just My Socks）？</span>
-            <span class="faq-indicator">+</span>
-          </div>
-          <div class="faq-answer" style="display: none;">
-            部分拥有海外正规IDC资质的服务商（例如搬瓦工旗下的Just My Socks）直接面向全球用户提供外汇结算服务。其优势在于信用背书极强、绝对无跑路风险且支持IP自动切换，但国内用户购买时需留意汇率换算与支付方式。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
             <span>对比后发现没有一家机场能满足我所有需求怎么办？</span>
             <span class="faq-indicator">+</span>
           </div>
           <div class="faq-answer" style="display: none;">
-            业界资深用户的成熟策略通常是「双机场组合（主力+备用）」：选择一条高品质IEPL专线（如闪电猫或桔子云旗舰版）作为日常办公、跨国会议与AI交互的主力线路；同时搭配一条平价轻量月付机场（如飞鸟云或泡泡狗）作为大流量下载与防失联的应急备用通道。
+            业界资深用户的成熟策略通常是「双机场组合（主力+备用）」：选择一条高品质IEPL/IPLC物理专线（如微风网络或闪跃FlashLeap）作为日常办公、跨国会议与AI交互的主力线路；同时搭配一条平价轻量月付或不限时机场（如飞猫云或飞V）作为大流量下载与防失联的应急备用通道。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>对比参数中“折算每GB单价”是如何计算的？</span>
+            <span class="faq-indicator">+</span>
+          </div>
+          <div class="faq-answer" style="display: none;">
+            折算每GB单价 = 实际起步月付金额 / 标称可用流量。我们坚持以标准1.0x倍率下的真实可用流量进行折算，帮助您剔除高倍率扣费陷阱，直观看出哪家服务商单价更实在。
           </div>
         </div>
       </div>
