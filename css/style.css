@@ -1265,3 +1265,137 @@ p {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   联络我们按钮与专业模态弹窗组件
+   ========================================================================== */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: #e879f9;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-contact:hover {
+  background: rgba(168, 85, 247, 0.25);
+  border-color: #e879f9;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(232, 121, 249, 0.35);
+}
+
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 3, 14, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease-in-out;
+}
+
+.contact-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-modal-card {
+  background: #0f172a;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(168, 85, 247, 0.2);
+  max-width: 520px;
+  width: 100%;
+  padding: 1.85rem;
+  position: relative;
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-main);
+}
+
+.contact-modal-overlay.active .contact-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.contact-modal-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.contact-channel-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  margin-bottom: 0.9rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-channel-card:hover {
+  border-color: rgba(168, 85, 247, 0.45);
+  transform: translateY(-2px);
+}
+
+.badge-purple {
+  background: rgba(168, 85, 247, 0.18);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.contact-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1e293b;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.contact-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

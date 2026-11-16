@@ -154,27 +154,61 @@ function buildTrust() {
           <span class="badge badge-blue">沟通渠道</span>
           <h1 style="font-size: 2.1rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">联系选机场网：意见反馈、数据纠错与沟通渠道</h1>
           <div class="article-meta">
-            <span>官方联系邮箱：contact@xuanjichang.top</span>
+            <span>官方直联 Telegram：@xintangtang</span>
+            <span>官方商务邮箱：xintangtang888@gmail.com</span>
           </div>
         </header>
 
         <div class="article-content">
-          <h2>欢迎您的监督与反馈</h2>
+          <h2>站长直联官方沟通渠道</h2>
           <p>
-            由于机场服务商的套餐资费、节点拓扑及促销政策可能随时发生动态调整，如果您在浏览本站时发现任何数据错误、失效链接或需要补充的事实细节，欢迎随时与我们取得联系。
+            选机场网恪守客观、透明与长期主义原则。无论您是跨国科研学术用户、外贸出海团队、跨境电商运营者，还是优质机场服务商，均可通过以下官方指定渠道与站长直接沟通：
           </p>
 
-          <div class="callout callout-info" style="margin: 2rem 0;">
-            <h3 style="margin-top: 0; color: #1e40af;">官方沟通邮箱</h3>
-            <p style="margin-bottom: 0.5rem;">电子邮箱：<strong>contact@xuanjichang.top</strong></p>
-            <p style="margin-bottom: 0; font-size: 0.9rem; color: var(--text-muted);">
-              我们在收到邮件后的 48 小时内完成核实与回复。涉及数据勘误的邮件请附带官方截图或可公开查验的依据。
+          <div class="cards-grid-2" style="margin: 1.5rem 0;">
+            <div class="contact-channel-card" style="margin-bottom: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span style="font-weight: 700; color: #38bdf8; font-size: 1.1rem;">✈️ Telegram 官方直连</span>
+                <span class="badge badge-green">实时推荐</span>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                响应速度最快，适用于紧急网络问题咨询、实时节点勘误与即时商务会话。
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 0.5rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 1rem; color: #f8fafc; margin-bottom: 0.85rem;">
+                <strong>@xintangtang</strong>
+              </div>
+              <a href="https://t.me/xintangtang" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm" style="display: inline-block;">
+                打开 Telegram 立即对话 &rarr;
+              </a>
+            </div>
+
+            <div class="contact-channel-card" style="margin-bottom: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span style="font-weight: 700; color: #f87171; font-size: 1.1rem;">✉️ 官方 Gmail 商务邮箱</span>
+                <span class="badge badge-blue">公函通道</span>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                适用于正式商务合作方案、机场收录公测邀请、详细长篇技术勘误报告。
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 0.5rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.95rem; color: #f8fafc; margin-bottom: 0.85rem;">
+                <strong>xintangtang888@gmail.com</strong>
+              </div>
+              <a href="mailto:xintangtang888@gmail.com" class="btn btn-outline btn-sm" style="display: inline-block; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;">
+                发送邮件直联 &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="callout callout-warning" style="margin: 1.75rem 0;">
+            <strong>🛡️ 站长官方防伪与安全监督声明：</strong>
+            <p style="margin: 0.4rem 0 0 0; font-size: 0.9rem; line-height: 1.6;">
+              选机场网站长唯一指定联络方式为 Telegram <strong>@xintangtang</strong> 与 Gmail <strong>xintangtang888@gmail.com</strong>。站长绝不会主动在任何第三方群组私信索要密码、要求个人转账汇款或兜售未经实测的任何劣质小作坊，谨防冒充受骗。
             </p>
           </div>
 
           <h2>商务合作与收录申请准则</h2>
           <p>
-            如果您是优质机场服务商希望申请收录评测，请在邮件中提供以下材料：
+            由于机场服务商的套餐资费、节点拓扑及促销政策可能随时发生动态调整，如果您在浏览本站时发现任何数据细节需要纠错，或希望申请收录评测，欢迎在邮件或 Telegram 中提供以下材料：
           </p>
           <ul>
             <li>品牌运营年限与公开主域名；</li>

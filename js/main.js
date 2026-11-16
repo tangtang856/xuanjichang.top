@@ -54,7 +54,94 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heading.id) observer.observe(heading);
     });
   }
+
+  // 5. 初始化联络我们模态弹窗与复制逻辑
+  initContactModal();
 });
+
+// 联络我们专业弹窗控制器
+function initContactModal() {
+  const modal = document.getElementById('contact-modal');
+  if (!modal) return;
+  const openBtns = document.querySelectorAll('.btn-open-contact');
+  const closeBtn = document.getElementById('btn-close-contact');
+  const toast = document.getElementById('contact-toast');
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  window.openContactModal = openModal;
+  window.closeContactModal = closeModal;
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // 一键复制支持
+  document.querySelectorAll('.btn-copy-contact').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const text = btn.getAttribute('data-copy');
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`已成功复制: ${text}`);
+        }).catch(() => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    });
+  });
+
+  function fallbackCopy(text) {
+    const input = document.createElement('input');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    try {
+      document.execCommand('copy');
+      showToast(`已成功复制: ${text}`);
+    } catch (err) {
+      showToast(`复制失败，请手动选择复制`);
+    }
+    document.body.removeChild(input);
+  }
+
+  let toastTimer = null;
+  function showToast(msg) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2200);
+  }
+}
 
 // ==========================================================================
 // 选机场网 (xuanjichang.top) - 3D 赛博网络地球动态背景 (Native Canvas 2D)
