@@ -181,6 +181,7 @@ function buildPage({
   </script>
 </head>
 <body>
+  <canvas id="bg-canvas" class="bg-canvas"></canvas>
   ${renderHeader(depth, activeNav)}
   ${breadcrumbs.length > 0 ? renderBreadcrumbs(breadcrumbs, depth) : ''}
   <main>

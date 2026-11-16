@@ -38,9 +38,9 @@ function buildReviews() {
         <!-- 官网直达与专属折扣卡片 -->
         <div class="callout callout-info" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;">
           <div>
-            <h3 style="margin: 0; font-size: 1.15rem; color: #1e40af;">👉 ${ap.name} 官方订阅与注册直达</h3>
-            <p style="margin: 0.35rem 0 0 0; font-size: 0.9rem; color: #1e3a8a;">
-              ${ap.coupon ? `专属折扣优惠码：<strong style="color: #b91c1c; font-family: monospace; font-size: 1.05rem; background: #fee2e2; padding: 0.15rem 0.4rem; border-radius: 4px;">${ap.coupon}</strong>` : '支持全平台主流客户端一键导入与自动化配置'}
+            <h3 style="margin: 0; font-size: 1.15rem; color: #60a5fa;">👉 ${ap.name} 官方订阅与注册直达</h3>
+            <p style="margin: 0.35rem 0 0 0; font-size: 0.9rem; color: #cbd5e1;">
+              ${ap.coupon ? `专属折扣优惠码：<strong style="color: #f87171; font-family: monospace; font-size: 1.05rem; background: rgba(239, 68, 68, 0.18); border: 1px solid rgba(239, 68, 68, 0.35); padding: 0.15rem 0.4rem; border-radius: 4px;">${ap.coupon}</strong>` : '支持全平台主流客户端一键导入与自动化配置'}
             </p>
           </div>
           <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary" style="padding: 0.65rem 1.4rem;">立即前往官网订购 &rarr;</a>
