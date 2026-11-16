@@ -723,6 +723,56 @@ p {
 .rank-3 { background-color: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
 .rank-other { background-color: var(--bg-subtle); color: var(--text-muted); }
 
+/* 排行榜专用卡片设计（替代横向滚动表格） */
+.ranking-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.ranking-item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-border);
+}
+
+.ranking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ranking-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.ranking-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.ranking-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 /* 文章与正文布局 (Blog, Guide, Review) */
 .article-container {
   display: grid;
@@ -1070,6 +1120,10 @@ p {
   }
   
   .cards-grid-3, .cards-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-features-grid {
     grid-template-columns: 1fr;
   }
   

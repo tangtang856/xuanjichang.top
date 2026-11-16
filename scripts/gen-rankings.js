@@ -1,5 +1,5 @@
 // scripts/gen-rankings.js
-// 选机场网 (xuanjichang.top) - 多维度排行榜页面生成器（全宽无横向滚动条优化版）
+// 选机场网 (xuanjichang.top) - 多维度排行榜页面生成器（纯响应式卡片排版，完全移除表格与横向滚动条）
 const { DOMAIN, airports, getRelativeRoot, buildPage } = require('./generate-site');
 
 function buildRankings() {
@@ -47,42 +47,7 @@ function buildRankings() {
         </p>
       </div>
 
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th style="text-align: center; width: 60px;">名次</th>
-              <th>品牌名称</th>
-              <th>综合评分</th>
-              <th>起步价格</th>
-              <th>线路类型</th>
-              <th>核心优势</th>
-              <th style="text-align: center;">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${airports.map((ap, idx) => {
-              const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
-              return `
-              <tr>
-                <td class="table-nowrap" style="text-align: center;"><span class="rank-badge ${badgeClass}">0${idx + 1}</span></td>
-                <td class="table-brand-cell"><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
-                <td class="table-nowrap"><strong style="color: var(--primary); font-size: 1.05rem;">${ap.overallRating}</strong> / 10</td>
-                <td class="table-nowrap"><span style="font-weight: 600;">¥${ap.startingPrice}</span> / ${ap.billingCycle}</td>
-                <td class="table-nowrap">${ap.lineType}</td>
-                <td style="font-size: 0.875rem;">${ap.advantages[0]}</td>
-                <td class="table-actions-cell" style="justify-content: center;">
-                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测</a>
-                  <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
-                </td>
-              </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ranking-content-body">
+      <div class="ranking-content-body" style="margin-top: 1.5rem;">
         <h2>综合排行榜评分标准与公开维度</h2>
         <p>
           选机场网坚决不采用“单点瞬时测速截图”作为评分依据。瞬时千兆测速往往可以通过内部虚设私有测速节点轻松造假。我们坚持以下四个公开可核验标准：
@@ -94,35 +59,48 @@ function buildRankings() {
           <li><strong>品牌信用与运营年限（权重20%）：</strong>运营超过2年以上、拥有清晰工单响应机制、无恶意封号或跑路黑历史。</li>
         </ul>
 
-        <h2>上榜品牌深度简评与购买建议</h2>
-        ${airports.map(ap => `
-          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-              <h3 style="margin: 0; font-size: 1.3rem;">${ap.name}（综合评分：${ap.overallRating}）</h3>
-              <span style="color: var(--primary); font-weight: 700;">起步价 ¥${ap.startingPrice} / 月</span>
+        <h2 style="margin-top: 2rem; margin-bottom: 1.25rem;">2026年度上榜品牌权威排名与深度简评（共14家）</h2>
+        ${airports.map((ap, idx) => {
+          const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
+          return `
+          <div class="ranking-item-card">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
+                <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                <span class="badge badge-blue" style="font-size: 0.75rem;">${ap.lineType}</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 0.35rem;">综合评分</span>
+                <strong style="color: var(--primary); font-size: 1.35rem;">${ap.overallRating}</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">/ 10</span>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem;">起步价 ¥${ap.startingPrice} / ${ap.billingCycle}</div>
+              </div>
             </div>
-            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6;">${ap.description}</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; font-size: 0.875rem;">
-              <div style="background: var(--bg-page); padding: 0.75rem; border-radius: var(--radius-sm);">
-                <strong style="color: var(--success);">优势清单：</strong>
-                <ul style="margin: 0.5rem 0 0 1rem; padding: 0;">
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0.75rem 0;">${ap.description}</p>
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 核心优势清单：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
                   ${ap.advantages.slice(0, 2).map(a => `<li>${a}</li>`).join('')}
                 </ul>
               </div>
-              <div style="background: var(--bg-page); padding: 0.75rem; border-radius: var(--radius-sm);">
-                <strong style="color: var(--danger);">注意事项：</strong>
-                <ul style="margin: 0.5rem 0 0 1rem; padding: 0;">
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--text-muted); font-size: 0.875rem;">ℹ 注意事项与限制：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
                   ${ap.disadvantages.slice(0, 2).map(d => `<li>${d}</li>`).join('')}
                 </ul>
               </div>
             </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <div class="ranking-card-actions">
               <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整评测报告 &rarr;</a>
-              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网直达</a>
               <a href="${root}compare/index.html" class="btn btn-outline btn-sm">加入横向比对</a>
             </div>
           </div>
-        `).join('')}
+          `;
+        }).join('')}
       </div>
     </div>
     `;
@@ -162,48 +140,58 @@ function buildRankings() {
       <div class="quick-answer-card" style="margin-top: 0;">
         <div class="quick-answer-header">💡 性价比选购核心要领</div>
         <p style="font-size: 0.95rem; margin-bottom: 0;">
-          高性价比并非单纯寻找“绝对低价”，而是寻找<strong>在保证网络连通率与不失联前提下的每GB最低使用成本</strong>。超低价劣质机场往往通过严重超卖导致晚高峰无法打开网页。本榜单已为您折算出各服务商的真实单GB单价。
+          高性价比并非单纯寻找“绝对低价”，而是寻找<strong>在保证网络连通率与不失联前提下的每GB最低使用成本</strong>。超低价劣质机场往往通过严重超卖导致晚高峰无法打开网页。本榜单已为您折算出各服务商的真实单GB单价并按实惠程度升序排列。
         </p>
       </div>
 
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th style="text-align: center; width: 60px;">名次</th>
-              <th>品牌名称</th>
-              <th>每GB实际成本</th>
-              <th>起步套餐</th>
-              <th>流量与价格</th>
-              <th>适合用途</th>
-              <th style="text-align: center;">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${sortedByValue.map((ap, idx) => {
-              const plan = ap.plans[0];
-              const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
-              return `
-              <tr>
-                <td class="table-nowrap" style="text-align: center;"><span class="rank-badge ${badgeClass}">0${idx + 1}</span></td>
-                <td class="table-brand-cell"><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
-                <td class="table-nowrap"><span style="color: var(--primary); font-weight: 800; font-size: 1.05rem;">¥${plan.costPerGB.toFixed(3)}</span> / GB</td>
-                <td class="table-nowrap">${plan.name}</td>
-                <td class="table-nowrap"><span style="font-weight: 600;">¥${ap.startingPrice}</span> / ${plan.traffic}</td>
-                <td style="font-size: 0.875rem; color: var(--text-muted);">${ap.suitableFor[0]}</td>
-                <td class="table-actions-cell" style="justify-content: center;">
-                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测</a>
-                  <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
-                </td>
-              </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
-      </div>
+      <div class="ranking-content-body" style="margin-top: 1.5rem;">
+        <h2 style="margin-bottom: 1.25rem;">2026年高性价比机场排名清单（按每GB真实使用成本升序）</h2>
+        ${sortedByValue.map((ap, idx) => {
+          const plan = ap.plans[0];
+          const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
+          return `
+          <div class="ranking-item-card">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
+                <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                <span class="badge badge-green" style="font-size: 0.75rem;">${ap.lineType}</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 0.35rem;">每GB实际成本</span>
+                <strong style="color: var(--success); font-size: 1.35rem;">¥${plan.costPerGB.toFixed(3)}</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">/ GB</span>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem;">起步：¥${ap.startingPrice} / ${plan.traffic}</div>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0.75rem 0;">${ap.description}</p>
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--primary); font-size: 0.875rem;">📦 套餐明细与折算：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>基准套餐：${plan.name}（月付 ¥${ap.startingPrice}）</li>
+                  <li>可用流量：${plan.traffic}（折算单价 ¥${plan.costPerGB.toFixed(3)}/GB）</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--success); font-size: 0.875rem;">🎯 核心优势与适用场景：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>优势：${ap.advantages[0]}</li>
+                  <li>适合：${ap.suitableFor[0]}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ranking-card-actions">
+              <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整评测报告 &rarr;</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网直达</a>
+              <a href="${root}compare/index.html" class="btn btn-outline btn-sm">加入横向比对</a>
+            </div>
+          </div>
+          `;
+        }).join('')}
 
-      <div class="ranking-content-body">
-        <h2>真实每GB单价的折算方法与防坑细节</h2>
+        <h2 style="margin-top: 2.5rem;">真实每GB单价的折算方法与防坑细节</h2>
         <p>
           许多新手用户在挑选所谓的“便宜机场”时，很容易落入以下计费陷阱：
         </p>
@@ -250,40 +238,60 @@ function buildRankings() {
 
       ${renderNavTabs('budget')}
 
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th style="text-align: center; width: 60px;">名次</th>
-              <th>品牌名称</th>
-              <th>月付起步价</th>
-              <th>起始套餐流量</th>
-              <th>线路类型</th>
-              <th>主要限制说明</th>
-              <th style="text-align: center;">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${budgetList.map((ap, idx) => `
-              <tr>
-                <td class="table-nowrap" style="text-align: center;"><span class="rank-badge rank-1">0${idx + 1}</span></td>
-                <td class="table-brand-cell"><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
-                <td class="table-nowrap"><span style="color: var(--primary); font-weight: 800; font-size: 1.05rem;">¥${ap.startingPrice}</span> / 月</td>
-                <td class="table-nowrap" style="font-weight: 600;">${ap.plans[0].traffic}</td>
-                <td class="table-nowrap">${ap.lineType}</td>
-                <td style="font-size: 0.875rem; color: var(--text-muted);">${ap.deviceLimit}；${ap.disadvantages[0]}</td>
-                <td class="table-actions-cell" style="justify-content: center;">
-                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测</a>
-                  <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
+      <div class="quick-answer-card" style="margin-top: 0;">
+        <div class="quick-answer-header">💡 低预算选购核心建议</div>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          低预算方案核心在于<strong>低门槛尝试与月付灵活退订</strong>。建议优先选用月付10元左右的平价方案，既能满足日常学术论文检索、代码克隆与轻度冲浪，又不需要承担一次性年付的高昂跑路风险。
+        </p>
       </div>
 
-      <div class="ranking-content-body">
-        <h2>低预算机场的使用建议与合理预期</h2>
+      <div class="ranking-content-body" style="margin-top: 1.5rem;">
+        <h2 style="margin-bottom: 1.25rem;">平价低预算机场排名清单（月付20元以内精选）</h2>
+        ${budgetList.map((ap, idx) => {
+          const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
+          return `
+          <div class="ranking-item-card">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
+                <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                <span class="badge badge-orange" style="font-size: 0.75rem;">${ap.lineType}</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 0.35rem;">起步月付</span>
+                <strong style="color: var(--primary); font-size: 1.35rem;">¥${ap.startingPrice}</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">/ 月</span>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem;">起始流量 ${ap.plans[0].traffic}</div>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0.75rem 0;">${ap.description}</p>
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--success); font-size: 0.875rem;">✓ 核心优势亮点：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>${ap.advantages[0]}</li>
+                  <li>适合人群：${ap.suitableFor[0]}</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--text-muted); font-size: 0.875rem;">ℹ 使用限制说明：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>设备限制：${ap.deviceLimit}</li>
+                  <li>注意事项：${ap.disadvantages[0]}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ranking-card-actions">
+              <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整评测报告 &rarr;</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网直达</a>
+              <a href="${root}compare/index.html" class="btn btn-outline btn-sm">加入横向比对</a>
+            </div>
+          </div>
+          `;
+        }).join('')}
+
+        <h2 style="margin-top: 2.5rem;">低预算机场的使用建议与合理预期</h2>
         <p>
           月付10元以内的低预算机场非常适合<strong>在校大学生查阅Google学术论文、GitHub克隆代码或配置为第二主力防失联备用梯子</strong>。
         </p>
@@ -324,40 +332,60 @@ function buildRankings() {
 
       ${renderNavTabs('stable')}
 
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th style="text-align: center; width: 60px;">名次</th>
-              <th>品牌名称</th>
-              <th>稳定性评分</th>
-              <th>线路类型</th>
-              <th>抗封锁机制</th>
-              <th>适合场景</th>
-              <th style="text-align: center;">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${stableList.map((ap, idx) => `
-              <tr>
-                <td class="table-nowrap" style="text-align: center;"><span class="rank-badge rank-1">0${idx + 1}</span></td>
-                <td class="table-brand-cell"><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
-                <td class="table-nowrap"><strong style="color: var(--primary); font-size: 1.05rem;">${ap.stabilityRating}</strong> / 10</td>
-                <td class="table-nowrap">${ap.lineType}</td>
-                <td style="font-size: 0.875rem;">${ap.advantages[0]}</td>
-                <td style="font-size: 0.875rem; color: var(--text-muted);">${ap.suitableFor[0]}</td>
-                <td class="table-actions-cell" style="justify-content: center;">
-                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测</a>
-                  <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
+      <div class="quick-answer-card" style="margin-top: 0;">
+        <div class="quick-answer-header">🛡️ 专线稳定性选购准则</div>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          纯正的<strong>IEPL（国际以太网专线）与IPLC</strong>走机房内网光缆物理直连，完全不经过公网GFW防火墙设备，因此晚高峰网络丢包率极低、延迟抖动小于5ms，是跨国办公、视频会议及高频金融交易的最高可靠性保障。
+        </p>
       </div>
 
-      <div class="ranking-content-body">
-        <h2>为什么稳定性是跨国办公与金融交易的第一生命线？</h2>
+      <div class="ranking-content-body" style="margin-top: 1.5rem;">
+        <h2 style="margin-bottom: 1.25rem;">高稳定性专线机场排名清单（纯IEPL/IPLC与BGP多入口架构）</h2>
+        ${stableList.map((ap, idx) => {
+          const badgeClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other';
+          return `
+          <div class="ranking-item-card">
+            <div class="ranking-card-header">
+              <div class="ranking-card-title-group">
+                <span class="rank-badge ${badgeClass}" style="width: 34px; height: 34px; font-size: 0.95rem;">0${idx + 1}</span>
+                <h3 style="margin: 0; font-size: 1.35rem; font-weight: 700;">${ap.name}</h3>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.75rem;">券: ${ap.coupon}</span>` : ''}
+                <span class="badge badge-blue" style="font-size: 0.75rem;">${ap.lineType}</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 0.35rem;">稳定性评分</span>
+                <strong style="color: var(--primary); font-size: 1.35rem;">${ap.stabilityRating}</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">/ 10</span>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem;">起步价 ¥${ap.startingPrice} / 月</div>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0.75rem 0;">${ap.description}</p>
+            <div class="ranking-features-grid">
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--primary); font-size: 0.875rem;">🛡️ 专线架构与抗封锁优势：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>线路类型：${ap.lineType}</li>
+                  <li>优势：${ap.advantages[0]}</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-page); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+                <strong style="color: var(--success); font-size: 0.875rem;">🎯 业务高可用保障场景：</strong>
+                <ul style="margin: 0.4rem 0 0 1rem; padding: 0; font-size: 0.85rem; line-height: 1.6;">
+                  <li>适用场景：${ap.suitableFor[0]}</li>
+                  <li>流媒体解锁：${ap.streamingSupport.slice(0, 3).join(' / ')}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ranking-card-actions">
+              <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整评测报告 &rarr;</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网直达</a>
+              <a href="${root}compare/index.html" class="btn btn-outline btn-sm">加入横向比对</a>
+            </div>
+          </div>
+          `;
+        }).join('')}
+
+        <h2 style="margin-top: 2.5rem;">为什么稳定性是跨国办公与金融交易的第一生命线？</h2>
         <p>
           对于跨国企业远程办公（Slack、Zoom在线会议）、程序员部署海外云主机、以及美股/港股/加密货币高频交易者而言，<strong>单次网络抖动或节点断连可能带来巨大的工作延误与财务损失</strong>。
         </p>
