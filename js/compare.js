@@ -150,10 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
               `).join('')}
             </tr>
             <tr>
-              <td style="font-weight: 700; background: var(--bg-subtle);">独立深度评测</td>
+              <td style="font-weight: 700; background: var(--bg-subtle);">独立深度评测与官网</td>
               ${items.map(it => `
                 <td style="text-align: center;">
-                  <a href="${prefix}review/${it.slug}/index.html" class="btn btn-outline btn-sm" style="display: inline-block;">查看完整评测</a>
+                  <a href="${prefix}review/${it.slug}/index.html" class="btn btn-outline btn-sm" style="display: block; margin-bottom: 0.4rem;">查看评测报告</a>
+                  <a href="${it.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm" style="display: block;">前往官网直达</a>
                 </td>
               `).join('')}
             </tr>

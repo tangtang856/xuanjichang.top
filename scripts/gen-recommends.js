@@ -131,7 +131,7 @@ function buildRecommends() {
               </ul>
               <div class="card-actions">
                 <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">查看评测</a>
-                <a href="${root}compare/index.html" class="btn btn-primary btn-sm">横向比对</a>
+                <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达官网</a>
               </div>
             </div>
           `).join('')}

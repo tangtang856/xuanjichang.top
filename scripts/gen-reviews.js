@@ -11,15 +11,16 @@ function buildReviews() {
     <div class="container article-container">
       <div class="article-main">
         <header class="article-header">
-          <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <span class="badge badge-blue">深度评测报告</span>
-            <span class="badge ${ap.testStatus === 'official-data' ? 'badge-green' : 'badge-orange'}">数据来源：官方公开参数+实测校准</span>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <span class="badge badge-blue">独立评测报告</span>
+            <span class="badge badge-green">数据核验：官方公开参数+实测</span>
+            ${ap.coupon ? `<span class="badge badge-orange">专属优惠码: ${ap.coupon}</span>` : ''}
           </div>
           <h1 style="font-size: 2.1rem; margin-top: 0.25rem; margin-bottom: 0.75rem;">${ap.name}深度评测：套餐资费、节点线路与优缺点客观分析</h1>
           <div class="article-meta">
             <span>最后核验日期：${ap.lastVerified}</span>
             <span>线路类型：${ap.lineType}</span>
-            <span>评测编辑：选机场网技术测评组</span>
+            <span>评测机构：选机场网技术测评组</span>
           </div>
         </header>
 
@@ -32,6 +33,17 @@ function buildReviews() {
           <div style="font-size: 0.85rem; color: var(--text-muted);">
             综合评分：<strong style="color: var(--primary); font-size: 1.1rem;">${ap.overallRating}</strong> / 10 · 速度体验：${ap.speedRating} · 稳定性：${ap.stabilityRating} · 性价比：${ap.valueRating}
           </div>
+        </div>
+
+        <!-- 官网直达与专属折扣卡片 -->
+        <div class="callout callout-info" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;">
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #1e40af;">👉 ${ap.name} 官方订阅与注册直达</h3>
+            <p style="margin: 0.35rem 0 0 0; font-size: 0.9rem; color: #1e3a8a;">
+              ${ap.coupon ? `专属折扣优惠码：<strong style="color: #b91c1c; font-family: monospace; font-size: 1.05rem; background: #fee2e2; padding: 0.15rem 0.4rem; border-radius: 4px;">${ap.coupon}</strong>` : '支持全平台主流客户端一键导入与自动化配置'}
+            </p>
+          </div>
+          <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary" style="padding: 0.65rem 1.4rem;">立即前往官网订购 &rarr;</a>
         </div>
 
         <div class="article-content">
@@ -179,7 +191,7 @@ function buildReviews() {
                 </div>
                 <div style="display: flex; gap: 0.5rem;">
                   <a href="${root}review/${o.slug}/index.html" class="btn btn-outline btn-sm">阅读评测</a>
-                  <a href="${root}compare/index.html" class="btn btn-primary btn-sm">在线横向PK</a>
+                  <a href="${o.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达官网</a>
                 </div>
               </div>
             `).join('')}
@@ -218,11 +230,13 @@ function buildReviews() {
             <div><strong>线路架构：</strong>${ap.lineType}</div>
             <div><strong>节点规模：</strong>${ap.nodeCount}</div>
             <div><strong>设备并发：</strong>${ap.deviceLimit}</div>
+            ${ap.coupon ? `<div><strong>专属优惠码：</strong><span style="color: #b91c1c; font-weight: bold;">${ap.coupon}</span></div>` : ''}
             <div><strong>核验日期：</strong>${ap.lastVerified}</div>
             <div><strong>综合评分：</strong><span style="color: var(--primary); font-weight: bold; font-size: 1.1rem;">${ap.overallRating}</span> / 10</div>
           </div>
-          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
-            <a href="${root}compare/index.html" class="btn btn-primary btn-sm" style="width: 100%;">将${ap.name}加入横向对比</a>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm" style="width: 100%;">前往${ap.name}官网</a>
+            <a href="${root}compare/index.html" class="btn btn-outline btn-sm" style="width: 100%;">加入在线横向对比</a>
           </div>
         </div>
 
@@ -278,13 +292,13 @@ function buildReviews() {
             </div>
             <p style="font-size: 0.875rem; color: var(--text-body); margin: 0.75rem 0 1rem 0;">${ap.description}</p>
             <ul class="card-features-list">
-              <li><span class="icon-check">✓</span> <span>起步资费：¥${ap.startingPrice} / 月</span></li>
-              <li><span class="icon-check">✓</span> <span>核验状态：${ap.testStatus === 'official-data' ? '官方参数已核实' : '实测通过'}</span></li>
+              <li><span class="icon-check">✓</span> <span>起步资费：¥${ap.startingPrice} / 月 (${ap.plans[0].traffic})</span></li>
+              <li><span class="icon-check">✓</span> <span>核验状态：官方参数已核实</span></li>
               <li><span class="icon-info">ℹ</span> <span>核心优势：${ap.advantages[0]}</span></li>
             </ul>
-            <div class="card-actions" style="margin-top: auto;">
-              <a href="${rootIndex}review/${ap.slug}/index.html" class="btn btn-primary btn-sm">阅读完整评测报告 &rarr;</a>
-              <a href="${rootIndex}compare/index.html" class="btn btn-outline btn-sm">横向比对</a>
+            <div class="card-actions" style="margin-top: auto; display: flex; gap: 0.5rem;">
+              <a href="${rootIndex}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测报告</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达官网</a>
             </div>
           </div>
         `).join('')}

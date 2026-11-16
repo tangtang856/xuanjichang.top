@@ -98,7 +98,10 @@ function buildIndexPage() {
                 <h3 class="airport-brand-title">${ap.name}</h3>
                 <span class="airport-tag">${ap.lineType}</span>
               </div>
-              <span class="badge ${ap.testStatus === 'official-data' ? 'badge-blue' : 'badge-green'}">已核实资料</span>
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
+                <span class="badge ${ap.testStatus === 'official-data' ? 'badge-blue' : 'badge-green'}">已核实资料</span>
+                ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.725rem;">券: ${ap.coupon}</span>` : ''}
+              </div>
             </div>
             <div class="price-box">
               <span class="price-currency">¥</span>
@@ -118,7 +121,7 @@ function buildIndexPage() {
             </div>
             <div class="card-actions">
               <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">深度评测</a>
-              <a href="${root}compare/index.html" class="btn btn-primary btn-sm">横向对比</a>
+              <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达官网</a>
             </div>
           </div>
           `;
@@ -161,8 +164,9 @@ function buildIndexPage() {
                 <td>${ap.lineType}</td>
                 <td>${ap.protocols.slice(0, 2).join(', ')}</td>
                 <td style="font-size: 0.85rem; color: var(--text-muted);">${ap.suitableFor[0]}</td>
-                <td style="text-align: right;">
-                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测报告</a>
+                <td style="text-align: right; white-space: nowrap;">
+                  <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm" style="margin-right: 0.25rem;">评测</a>
+                  <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
                 </td>
               </tr>
               `;

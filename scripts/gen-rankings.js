@@ -50,12 +50,15 @@ function buildRankings() {
                 return `
                 <tr>
                   <td><span class="rank-badge ${badgeClass}">0${idx + 1}</span></td>
-                  <td><strong>${ap.name}</strong></td>
+                  <td><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
                   <td><strong style="color: var(--primary);">${ap.overallRating}</strong> / 10</td>
                   <td>¥${ap.startingPrice} / ${ap.billingCycle}</td>
                   <td>${ap.lineType}</td>
                   <td style="font-size: 0.85rem;">${ap.advantages[0]}</td>
-                  <td><a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">查看评测</a></td>
+                  <td style="white-space: nowrap;">
+                    <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm" style="margin-right: 0.25rem;">评测</a>
+                    <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
+                  </td>
                 </tr>
                 `;
               }).join('')}
@@ -97,9 +100,10 @@ function buildRankings() {
                   </ul>
                 </div>
               </div>
-              <div style="display: flex; gap: 0.75rem;">
-                <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整独立评测报告 &rarr;</a>
-                <a href="${root}compare/index.html" class="btn btn-primary btn-sm">将${ap.name}加入横向比对</a>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">阅读${ap.name}完整评测报告 &rarr;</a>
+                <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">前往${ap.name}官网</a>
+                <a href="${root}compare/index.html" class="btn btn-outline btn-sm">加入横向比对</a>
               </div>
             </div>
           `).join('')}
@@ -187,12 +191,15 @@ function buildRankings() {
                 return `
                 <tr>
                   <td><span class="rank-badge ${badgeClass}">0${idx + 1}</span></td>
-                  <td><strong>${ap.name}</strong></td>
+                  <td><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
                   <td><span style="color: var(--primary); font-weight: 800; font-size: 1.05rem;">¥${plan.costPerGB.toFixed(3)}</span> / GB</td>
                   <td>${plan.name}</td>
                   <td>¥${ap.startingPrice} / ${plan.traffic}</td>
                   <td style="font-size: 0.85rem; color: var(--text-muted);">${ap.suitableFor[0]}</td>
-                  <td><a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测详情</a></td>
+                  <td style="white-space: nowrap;">
+                    <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm" style="margin-right: 0.25rem;">评测</a>
+                    <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
+                  </td>
                 </tr>
                 `;
               }).join('')}
@@ -277,12 +284,15 @@ function buildRankings() {
               ${budgetList.map((ap, idx) => `
                 <tr>
                   <td><span class="rank-badge rank-1">0${idx + 1}</span></td>
-                  <td><strong>${ap.name}</strong></td>
+                  <td><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
                   <td><span style="color: var(--primary); font-weight: 800;">¥${ap.startingPrice}</span> / 月</td>
                   <td>${ap.plans[0].traffic}</td>
                   <td>${ap.lineType}</td>
                   <td style="font-size: 0.85rem; color: var(--text-muted);">${ap.deviceLimit}；${ap.disadvantages[0]}</td>
-                  <td><a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">评测报告</a></td>
+                  <td style="white-space: nowrap;">
+                    <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm" style="margin-right: 0.25rem;">评测</a>
+                    <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
+                  </td>
                 </tr>
               `).join('')}
             </tbody>
@@ -360,12 +370,15 @@ function buildRankings() {
               ${stableList.map((ap, idx) => `
                 <tr>
                   <td><span class="rank-badge rank-1">0${idx + 1}</span></td>
-                  <td><strong>${ap.name}</strong></td>
+                  <td><strong>${ap.name}</strong> ${ap.coupon ? `<span class="badge badge-orange" style="font-size: 0.7rem;">券: ${ap.coupon}</span>` : ''}</td>
                   <td><strong style="color: var(--primary);">${ap.stabilityRating}</strong> / 10</td>
                   <td>${ap.lineType}</td>
                   <td style="font-size: 0.85rem;">${ap.advantages[0]}</td>
                   <td style="font-size: 0.85rem; color: var(--text-muted);">${ap.suitableFor[0]}</td>
-                  <td><a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm">深度评测</a></td>
+                  <td style="white-space: nowrap;">
+                    <a href="${root}review/${ap.slug}/index.html" class="btn btn-outline btn-sm" style="margin-right: 0.25rem;">评测</a>
+                    <a href="${ap.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary btn-sm">直达</a>
+                  </td>
                 </tr>
               `).join('')}
             </tbody>
