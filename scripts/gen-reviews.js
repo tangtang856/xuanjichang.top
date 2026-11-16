@@ -4,7 +4,10 @@ function buildReviews() {
   const depth = 2;
   const root = getRelativeRoot(depth);
 
-  airports.forEach(ap => {
+  airports.forEach((ap, idx) => {
+    // 上下家评测循环导航
+    const prevAp = idx > 0 ? airports[idx - 1] : airports[airports.length - 1];
+    const nextAp = idx < airports.length - 1 ? airports[idx + 1] : airports[0];
     const otherAirports = airports.filter(a => a.id !== ap.id);
 
     const content = `
@@ -218,6 +221,32 @@ function buildReviews() {
                 首先检查本地网络连接是否正常，然后在客户端中右键点击订阅执行“更新订阅（Update Subscription）”。若依然异常，请切换至其他备用区域（例如从香港切换至日本或新加坡节点）。
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- 上下一篇评测导航条 (每个评测跳转到下一个评测) -->
+        <nav class="article-pagination" aria-label="评测上下篇导航">
+          <a href="${root}review/${prevAp.slug}/index.html" class="pagination-item prev">
+            <span class="pagination-label">&larr; 上一家评测 · ${prevAp.lineType}</span>
+            <span class="pagination-title">${prevAp.name} 深度评测 (综合评分: ${prevAp.overallRating})</span>
+          </a>
+          <a href="${root}review/${nextAp.slug}/index.html" class="pagination-item next">
+            <span class="pagination-label">下一家评测 · ${nextAp.lineType} &rarr;</span>
+            <span class="pagination-title">${nextAp.name} 深度评测 (综合评分: ${nextAp.overallRating})</span>
+          </a>
+        </nav>
+
+        <!-- 延伸相关机场评测 -->
+        <div class="related-articles-section" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-light);">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-main);">🔍 更多主流机场独立评测推荐</h3>
+          <div class="cards-grid-3">
+            ${otherAirports.slice(0, 3).map(oa => `
+              <a href="${root}review/${oa.slug}/index.html" class="category-card" style="padding: 1.25rem;">
+                <span class="badge badge-blue" style="font-size: 0.7rem; align-self: flex-start; margin-bottom: 0.5rem;">${oa.lineType}</span>
+                <h4 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.35rem; line-height: 1.4;">${oa.name}（评分: ${oa.overallRating}）</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">起步 ¥${oa.startingPrice}/月 · ${oa.advantages[0]}</p>
+              </a>
+            `).join('')}
           </div>
         </div>
       </div>

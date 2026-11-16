@@ -7,9 +7,13 @@ function buildGuides() {
   const depth = 2;
   const root = getRelativeRoot(depth);
 
-  guides.forEach(g => {
+  guides.forEach((g, idx) => {
+    // 上下篇循环导航
+    const prevGuide = idx > 0 ? guides[idx - 1] : guides[guides.length - 1];
+    const nextGuide = idx < guides.length - 1 ? guides[idx + 1] : guides[0];
+
     // 侧边栏推荐教程：优先精选核心教程
-    const relatedGuides = guides.filter(x => x.slug !== g.slug).slice(0, 8);
+    const relatedGuides = guides.filter(x => x.slug !== g.slug);
 
     const content = `
     <div class="container article-container">
@@ -70,6 +74,32 @@ function buildGuides() {
             <a href="${root}ranking/value/index.html" class="btn btn-outline btn-sm">查看高性价比榜</a>
             <a href="${root}compare/index.html" class="btn btn-outline btn-sm">在线横向比选</a>
             <a href="${root}guides/index.html" class="btn btn-outline btn-sm">返回教程中心</a>
+          </div>
+        </div>
+
+        <!-- 上下一篇教程导航条 (每个教程跳转到下一个教程) -->
+        <nav class="article-pagination" aria-label="教程上下篇导航">
+          <a href="${root}guides/${prevGuide.slug}/index.html" class="pagination-item prev">
+            <span class="pagination-label">&larr; 上一篇教程 · ${prevGuide.client || '客户端教程'}</span>
+            <span class="pagination-title">${prevGuide.h1}</span>
+          </a>
+          <a href="${root}guides/${nextGuide.slug}/index.html" class="pagination-item next">
+            <span class="pagination-label">下一篇教程 · ${nextGuide.client || '客户端教程'} &rarr;</span>
+            <span class="pagination-title">${nextGuide.h1}</span>
+          </a>
+        </nav>
+
+        <!-- 延伸推荐教程 -->
+        <div class="related-articles-section" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-light);">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-main);">🛠️ 延伸推荐相关教程</h3>
+          <div class="cards-grid-3">
+            ${relatedGuides.slice(0, 3).map(rg => `
+              <a href="${root}guides/${rg.slug}/index.html" class="category-card" style="padding: 1.25rem;">
+                <span class="badge badge-blue" style="font-size: 0.7rem; align-self: flex-start; margin-bottom: 0.5rem;">${rg.client || '客户端'}</span>
+                <h4 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.35rem; line-height: 1.4;">${rg.h1}</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${rg.desc}</p>
+              </a>
+            `).join('')}
           </div>
         </div>
       </div>

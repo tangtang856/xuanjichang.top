@@ -144,7 +144,11 @@ function buildGlossary() {
     }
   ];
 
-  terms.forEach(t => {
+  terms.forEach((t, idx) => {
+    // 上下一条术语循环导航
+    const prevTerm = idx > 0 ? terms[idx - 1] : terms[terms.length - 1];
+    const nextTerm = idx < terms.length - 1 ? terms[idx + 1] : terms[0];
+
     const content = `
     <div class="container article-container">
       <div class="article-main">
@@ -176,6 +180,18 @@ function buildGlossary() {
             <a href="${root}guides/index.html" class="btn btn-outline btn-sm">客户端使用教程</a>
           </div>
         </article>
+
+        <!-- 上下一条术语百科导航条 (每个条目跳转到下一个条目) -->
+        <nav class="article-pagination" aria-label="术语百科上下篇导航">
+          <a href="${root}glossary/${prevTerm.slug}/index.html" class="pagination-item prev">
+            <span class="pagination-label">&larr; 上一条术语 · ${prevTerm.tag}</span>
+            <span class="pagination-title">${prevTerm.h1}</span>
+          </a>
+          <a href="${root}glossary/${nextTerm.slug}/index.html" class="pagination-item next">
+            <span class="pagination-label">下一条术语 · ${nextTerm.tag} &rarr;</span>
+            <span class="pagination-title">${nextTerm.h1}</span>
+          </a>
+        </nav>
       </div>
 
       <aside class="article-sidebar">

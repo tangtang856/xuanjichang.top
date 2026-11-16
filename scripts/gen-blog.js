@@ -7,7 +7,11 @@ function buildBlog() {
   const depth = 2;
   const root = getRelativeRoot(depth);
 
-  articles.forEach(art => {
+  articles.forEach((art, idx) => {
+    // 上下篇循环导航，方便用户连续阅读
+    const prevArticle = idx > 0 ? articles[idx - 1] : articles[articles.length - 1];
+    const nextArticle = idx < articles.length - 1 ? articles[idx + 1] : articles[0];
+
     // 侧边栏：展示同 cluster 或相关精选文章 (8篇)
     const relatedArticles = articles
       .filter(a => a.slug !== art.slug && (a.cluster === art.cluster || a.tag === art.tag))
@@ -53,6 +57,32 @@ function buildBlog() {
             <a href="${root}guides/index.html" class="btn btn-outline btn-sm">查看客户端教程</a>
           </div>
         </article>
+
+        <!-- 上下一篇与内链导航条 (每个文章跳转到下一个文章) -->
+        <nav class="article-pagination" aria-label="文章上下篇导航">
+          <a href="${root}blog/${prevArticle.slug}/index.html" class="pagination-item prev">
+            <span class="pagination-label">&larr; 上一篇 · ${prevArticle.tag || '选购指南'}</span>
+            <span class="pagination-title">${prevArticle.h1}</span>
+          </a>
+          <a href="${root}blog/${nextArticle.slug}/index.html" class="pagination-item next">
+            <span class="pagination-label">下一篇 · ${nextArticle.tag || '选购指南'} &rarr;</span>
+            <span class="pagination-title">${nextArticle.h1}</span>
+          </a>
+        </nav>
+
+        <!-- 延伸相关推荐阅读 -->
+        <div class="related-articles-section" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-light);">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-main);">🔍 延伸相关推荐阅读</h3>
+          <div class="cards-grid-3">
+            ${relatedArticles.slice(0, 3).map(ra => `
+              <a href="${root}blog/${ra.slug}/index.html" class="category-card" style="padding: 1.25rem;">
+                <span class="badge badge-blue" style="font-size: 0.7rem; align-self: flex-start; margin-bottom: 0.5rem;">${ra.tag}</span>
+                <h4 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.35rem; line-height: 1.4;">${ra.h1}</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${ra.desc}</p>
+              </a>
+            `).join('')}
+          </div>
+        </div>
       </div>
 
       <aside class="article-sidebar">
